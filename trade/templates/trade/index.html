@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <h1>Welcome, {{ user }}!</h1>
-    <a href="{% url 'logout' %}">log out</a>
+    <head>
+        <style type="text/css">
+            p.ok {
+                color: green;
+            }
+            p.danger {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome, {{ user.username }}!</h1>
+        <h2>Your asset: {{ account.asset }}</h2>
+        <h2>Your credit: {{ account.credit }}</h2>
+        {% if account.is_authenticated %}
+            <p class="ok">Authenticated</p>
+        {% else %}
+            <p class="danger">Unauthenticated</p>
+        {% endif %}
+        <a href="{% url 'logout' %}">log out</a>
+    </body>
 </html>

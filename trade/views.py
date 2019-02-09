@@ -8,7 +8,10 @@ from .forms import LoginForm
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'trade/index.html')
+        context = {
+            'account': request.user.account
+        }
+        return render(request, 'trade/index.html', context)
     else:
         return render(request, 'trade/introduction.html')
 
