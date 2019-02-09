@@ -1,14 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Account(models.Model):
-    username = models.CharField(max_length=20)
-    passwd = models.CharField(max_length=100)
+    user = models.ForeignKey(User, models.CASCADE)
     asset = models.IntegerField(default=0)
     credit = models.IntegerField(default=100)
-    isIndividual = models.BooleanField(default=True)
-    isValidated = models.BooleanField(default=False)
+    is_individual = models.BooleanField(default=True)
+    is_authenticated = models.BooleanField(default=False)
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    Price = models.IntegerField()
-    isValidated = models.BooleanField(default=False)
+    price = models.IntegerField()
+    is_validated = models.BooleanField(default=False)
