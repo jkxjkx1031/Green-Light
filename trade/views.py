@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .forms import LoginForm
+from .models import Account, Product
 
 
 def index(request):
@@ -38,3 +39,19 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+def market(request):
+    products = get_list_or_404(Product)
+    context = {
+        'products': products
+    }
+    return render(request, 'trade/market.html', context)
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        'product': product
+    }
+    return render(request, 'trade/product_detail.html', context)

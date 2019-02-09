@@ -20,6 +20,7 @@
         {% else %}
             <p class="danger">Unauthenticated</p>
         {% endif %}
+        <a href="{% url 'market' %}">Browse the market -></a>
         <a href="{% url 'logout' %}">log out</a>
     </body>
 </html>

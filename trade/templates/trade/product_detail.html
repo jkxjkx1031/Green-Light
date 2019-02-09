@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style type="text/css">
+            p.ok {
+                color: green;
+            }
+            p.danger {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>{{ product.name }}</h2>
+        <h4>Price: {{ product.price }}</h4>
+        {% if product.is_validated %}
+            <a href="">Purchase</a>
+        {% else %}
+            <p class="danger">
+                The product has not been validated yet, so you can't purchase it now.
+            </p>
+        {% endif %}
+        <a href="{% url 'market' %}">Go back</a>
+    </body>
+</html>

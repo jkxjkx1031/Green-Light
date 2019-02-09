@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <style type="text/css">
+            a.ok {
+                color: green;
+            }
+            a.disable {
+                color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Market</h1>
+        <ul>
+            {% for product in products %}
+                {% if product.is_validated %}
+                    <li><a href="{% url 'product_detail' product.id %}" class="ok">{{ product.name }}</a></li>
+                {% else %}
+                    <li><a href="{% url 'product_detail' product.id %}" class="disable">{{ product.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </body>
+</html>
