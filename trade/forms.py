@@ -21,3 +21,4 @@ class LoginForm(forms.Form):
             }
         )
     )
+    
