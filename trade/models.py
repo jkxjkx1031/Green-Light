@@ -12,4 +12,5 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     is_validated = models.BooleanField(default=False)
+    img = models.ImageField(upload_to='trade/')
     
