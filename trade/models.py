@@ -7,6 +7,7 @@ class Account(models.Model):
     credit = models.IntegerField(default=100)
     is_individual = models.BooleanField(default=True)
     is_authenticated = models.BooleanField(default=False)
+    img = models.ImageField(upload_to='trade/')
 
 class Product(models.Model):
     name = models.CharField(max_length=100)

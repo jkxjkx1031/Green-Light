@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Welcome, {{ user.username }}!</h1>
+        <img src="{{ account.img.url }}" alt="img" width="200px">
         <h2>Your asset: {{ account.asset }}</h2>
         <h2>Your credit: {{ account.credit }}</h2>
         {% if account.is_authenticated %}
