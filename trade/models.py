@@ -14,4 +14,11 @@ class Product(models.Model):
     price = models.IntegerField()
     is_validated = models.BooleanField(default=False)
     img = models.ImageField(upload_to='trade/')
+
+class EnergyAccount(models.Model):
+    account = models.OneToOneField(Account, models.CASCADE)
+    energy = models.IntegerField(default=0)
+    last_refreshed = models.DateTimeField()
+    def energy_level(self):
+        return self.energy // 100       # levels need to be defined
     

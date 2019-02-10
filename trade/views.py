@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .forms import LoginForm
-from .models import Account, Product
+from .models import Product
 
 
 def index(request):
