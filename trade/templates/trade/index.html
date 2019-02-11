@@ -15,6 +15,7 @@
         <h1>Welcome, {{ user.username }}!</h1>
         <img src="{{ account.img.url }}" alt="img" width="200px">
         <h2>Your asset: {{ account.asset }}</h2>
+        <a href="{% url 'energy' %}">To earn more C-coins >></a>
         <h2>Your credit: {{ account.credit }}</h2>
         {% if account.is_authenticated %}
             <p class="ok">Authenticated</p>

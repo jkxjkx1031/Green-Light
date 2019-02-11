@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 from .forms import LoginForm
-from .models import Product
+from .models import Product, EnergyAccount
 
 
 def index(request):
@@ -55,3 +56,12 @@ def product_detail(request, product_id):
         'product': product
     }
     return render(request, 'trade/product_detail.html', context)
+
+
+@login_required(login_url='/login/')
+def energy_display(request):
+    ea = get_object_or_404(EnergyAccount, pk=request.user.account.energyaccount.id)
+    context = {
+        'energy_account': ea
+    }
+    return render(request, 'trade/energy.html', context)

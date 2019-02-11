@@ -1,6 +1,7 @@
 from django.shortcuts import get_list_or_404
 from django.utils import timezone
 from .models import EnergyAccount
+from .settings import TOTAL_CC_SCATTER_DAILY
 
 def energy_gather():
     ea_objects = get_list_or_404(EnergyAccount)
@@ -13,6 +14,5 @@ def energy_gather():
     sum_of_level = sum(recorded_level)
     for (idx, ea) in enumerate(ea_objects):
         if recorded_level[idx] != 0:
-            ea.account.asset += int(10000 * recorded_level[idx] / sum_of_level)
-            # total amount of C-coin scattered needs to be defined
+            ea.account.asset += int(TOTAL_CC_SCATTER_DAILY * recorded_level[idx] / sum_of_level)
             ea.account.save()

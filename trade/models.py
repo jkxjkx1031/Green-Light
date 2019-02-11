@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from .settings import ENERGY_LEVEL_INCREMENT
 
 class Account(models.Model):
     user = models.OneToOneField(User, models.CASCADE)
@@ -20,5 +21,5 @@ class EnergyAccount(models.Model):
     energy = models.IntegerField(default=0)
     last_refreshed = models.DateTimeField()
     def energy_level(self):
-        return self.energy // 100       # levels need to be defined
+        return self.energy // ENERGY_LEVEL_INCREMENT
     
