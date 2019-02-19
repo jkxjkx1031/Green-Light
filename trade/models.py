@@ -22,4 +22,8 @@ class EnergyAccount(models.Model):
     last_refreshed = models.DateTimeField()
     def energy_level(self):
         return self.energy // ENERGY_LEVEL_INCREMENT
+
+class CarbonCoinCcy(models.Model):
+    date = models.DateField()
+    close = models.FloatField()
     
