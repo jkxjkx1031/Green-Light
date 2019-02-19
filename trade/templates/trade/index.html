@@ -1,6 +1,959 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Home Page</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/font-awesome/css/font-awesome.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'trade/css/ionicons.min.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/jvectormap/jquery-jvectormap-1.2.2.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'trade/css/adminlte.min.css' %}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <!-- <link rel="stylesheet" href="{% static 'trade/css/skins/_all-skins.min.css' %}"> -->
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <!--REQUIRED SCRIPTS-->
+    <!-- jQuery -->
+    <script src="{% static 'trade/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'trade/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'trade/js/adminlte.js' %}"></script>
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="{% static 'trade/js/demo.js' %}"></script>
+
+    <!-- PAGE PLUGINS -->
+    <!-- SparkLine -->
+    <script src="{% static 'trade/plugins/sparkline/jquery.sparkline.min.js' %}"></script>
+    <!-- jVectorMap -->
+    <script src="{% static 'trade/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+    <script src="{% static 'trade/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="{% static 'trade/plugins/slimScroll/jquery.slimscroll.min.js' %}"></script>
+    <!-- ChartJS 1.0.2 -->
+    <script src="{% static 'trade/plugins/chartjs-old/Chart.min.js' %}"></script>
+
+    <!-- PAGE SCRIPTS -->
+    <script src="{% static 'trade/js/pages/dashboard2.js' %}"></script>
+
+    <script src="{% static 'trade/js/pages/salesboard.js' %}"></script>
+
+
+    <!--<link rel="apple-touch-icon" href="//mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" />-->
+    <!--<link rel="shortcut icon" href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico">-->
+    <link href="{% static 'trade/js/external/google-code-prettify/prettify.css' %}" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">-->
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="{% static 'trade/js/external/jquery.hotkeys.js' %}"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'trade/js/external/google-code-prettify/prettify.js' %}"></script>
+    <link href="{% static 'trade/css/index4-append.css' %}" rel="stylesheet">
+    <script src="{% static 'trade/js/bootstrap-wysiwyg.js' %}"></script>
+
+
+    <!--<style type="text/css">-->
+    <!--.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}-->
+    <!--</style>-->
+
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <!-- <li class="nav-item d-none d-sm-inline-block">
+              <a href="#" class="nav-link">Contact</a>
+            </li> -->
+        </ul>
+
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-comments-o"></i>
+                    <span class="badge badge-danger navbar-badge">3</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user1-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 mr-3 img-circle">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Xu Xiangrong
+                                    <span class="float-right text-sm text-danger"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">Call me whenever you can...</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user8-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Jin Kaixiang
+                                    <span class="float-right text-sm text-muted"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">I got your message bro</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user3-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Jiang Wenjie
+                                    <span class="float-right text-sm text-warning"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">The subject goes here</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                </div>
+            </li>
+
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge badge-warning navbar-badge">15</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope mr-2"></i> 4 new messages
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-users mr-2"></i> 8 friend requests
+                        <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-file mr-2"></i> 3 new reports
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                        class="fa fa-th-large"></i></a>
+            </li>
+        </ul>
+
+
+    </nav>
+    <!-- /.navbar -->
+
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+            <img src="{% static 'trade/image/nba_data.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">Green Light</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="{% static 'trade/image/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">{{ user.username }}</a>
+                </div>
+            </div>
+
+
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>碳市场
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{ url_for('index') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>碳市场形势</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a href="pages/widgets.html" class="nav-link">
+                        <i class="nav-icon fa fa-th"></i>
+                        <p>
+                          Widgets
+                          <span class="right badge badge-danger">New</span>
+                        </p>
+                      </a>
+                    </li> -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <p>
+                                交易中心
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                               <a href="{ url_for('companies') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>交易公司</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+					<li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <p>
+                                个人中心
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{ url_for('index') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>我的账户</p>
+                                </a>
+                            </li>
+							<li class="nav-item">
+                                <a href="{ url_for('history') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>我的交易记录</p>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">碳市场详情</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Info boxes -->
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fa fa-gear"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">YEAR</span>
+                                <span class="info-box-number">
+                  <small></small>
+                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-institution"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">BRAND</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix hidden-md-up"></div>
+
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fa fa-commenting"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">TYPE</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+
+
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">BUYER</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">MONTHLY SALES REPORT</h5>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <div class="btn-group">
+                                        <!--
+                                        <button type="button" class="btn btn-tool dropdown-toggle"
+                                                data-toggle="dropdown">
+                                            <i class="fa fa-wrench"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+
+                                            <a href="#" class="dropdown-item">Action</a>
+                                            <a href="#" class="dropdown-item">Another action</a>
+                                            <a href="#" class="dropdown-item">Something else here</a>
+                                            <a class="dropdown-divider"></a>
+                                            <a href="#" class="dropdown-item">Separated link</a>
+
+
+                                        </div>
+                                        -->
+                                    </div>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+
+
+
+                                    <div class="col-md-8">
+                                        <p class="text-center">
+                                            <strong>CAR SALES FOR HALF OF A YEAR</strong>
+                                        </p>
+
+                                        <div id="chart">
+                                            <!-- Sales Chart Canvas-->
+
+
+                                            <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
+
+
+                                        </div>
+
+                                        <button type="button" class="btn btn-primary btn-sm" id="submitBtn2">
+                                                        OVERVIEW THE SALES
+                                                    </button>
+
+                                        <li class="cr string">
+                                            <div><span class="property-name">TYPE</span>
+                                                <div class="c">
+                                                    <select id="select_car">
+                                                        <option value="价格">Volkswagen Cross Santana</option>
+                                                        <option value="配置">Volkswagen Cross Polo</option>
+                                                        <option value="操控">Toyota Motors</option>
+                                                        <option value="舒适性">Audi Q7</option>
+                                                        <option value="油耗">Audi A3</option>
+                                                        <option value="动力">Audi A4L</option>
+                                                        <option value="内饰">Audi S3</option>
+                                                        <option value="安全性">Audi A4</option>
+                                                        <option value="空间">Audi S7</option>
+                                                        <option value="外观">Audi Q3</option>
+                                                        <option value="刹车">Audi TT</option>
+                                                        <option value="品牌价值">Audi RS 3</option>
+                                                        <option value="百公里速度">Audi RS 4</option>
+                                                        <option value="邮箱容量">Audi TT R8</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- /.chart-responsive-->
+                                    </div>
+
+
+
+                                    <!-- /.col -->
+                                    <div class="col-md-4">
+                                        <p class="text-center">
+                                            <strong>Goal Completion</strong>
+                                        </p>
+
+                                        <div class="progress-group">
+                                            Add Products to Cart
+                                            <span class="float-right"><b>160</b>/200</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress-group -->
+
+                                        <div class="progress-group">
+                                            Complete Purchase
+                                            <span class="float-right"><b>310</b>/400</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.progress-group -->
+                                        <div class="progress-group">
+                                            <span class="progress-text">Visit Premium Page</span>
+                                            <span class="float-right"><b>480</b>/800</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-success" style="width: 60%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.progress-group -->
+                                        <div class="progress-group">
+                                            Send Inquiries
+                                            <span class="float-right"><b>250</b>/500</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress-group -->
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- ./card-body -->
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-success"><i
+                                                    class="fa fa-caret-up"></i> 17%</span>
+                                            <h5 class="description-header">$35,210.43</h5>
+                                            <span class="description-text">TOTAL REVENUE</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-warning"><i
+                                                    class="fa fa-caret-left"></i> 0%</span>
+                                            <h5 class="description-header">$10,390.90</h5>
+                                            <span class="description-text">TOTAL COST</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-success"><i
+                                                    class="fa fa-caret-up"></i> 20%</span>
+                                            <h5 class="description-header">$24,813.53</h5>
+                                            <span class="description-text">TOTAL PROFIT</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block">
+                                            <span class="description-percentage text-danger"><i
+                                                    class="fa fa-caret-down"></i> 18%</span>
+                                            <h5 class="description-header">1200</h5>
+                                            <span class="description-text">GOAL COMPLETIONS</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- Main row -->
+                <div class="row">
+                    <!-- Left col -->
+                    <div class="col-md-8">
+                        <!-- MAP & BOX PANE -->
+                        <div class="card">
+
+
+                            <div class="card-header">
+                                <h3 class="card-title">PLEASE WRITE YOUR COMMENT HERE</h3>
+
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                            <!-- /.card-header -->
+
+                            <div class="card-body p-0">
+                                <div class="d-md-flex">
+                                    <div class="p-1 flex-1" style="overflow: hidden">
+                                        <!-- Map will be created here -->
+                                        <div id="world-map-markers" style="height: 325px; overflow: hidden">
+
+
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+                                            <!--begin for insert  -->
+
+                                            <div id="alerts"></div>
+                                            <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                                                <!--<div class="btn-group">-->
+                                                <!--<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>-->
+                                                <!--<ul class="dropdown-menu">-->
+                                                <!--</ul>-->
+                                                <!--</div>-->
+                                                <div class="btn-group">
+                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
+                                                       title="Font Size"><i class="icon-text-height"></i>&nbsp;<b
+                                                            class="caret"></b></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a data-edit="fontSize 5"><font size="5">Huge</font></a>
+                                                        </li>
+                                                        <li><a data-edit="fontSize 3"><font size="3">Normal</font></a>
+                                                        </li>
+                                                        <li><a data-edit="fontSize 1"><font size="1">Small</font></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i
+                                                            class="icon-bold"></i></a>
+                                                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i
+                                                            class="icon-italic"></i></a>
+                                                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i
+                                                            class="icon-strikethrough"></i></a>
+                                                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
+                                                            class="icon-underline"></i></a>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="insertunorderedlist"
+                                                       title="Bullet list"><i class="icon-list-ul"></i></a>
+                                                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i
+                                                            class="icon-list-ol"></i></a>
+                                                    <a class="btn" data-edit="outdent"
+                                                       title="Reduce indent (Shift+Tab)"><i
+                                                            class="icon-indent-left"></i></a>
+                                                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i
+                                                            class="icon-indent-right"></i></a>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="justifyleft"
+                                                       title="Align Left (Ctrl/Cmd+L)"><i
+                                                            class="icon-align-left"></i></a>
+                                                    <a class="btn" data-edit="justifycenter"
+                                                       title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+                                                    <a class="btn" data-edit="justifyright"
+                                                       title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+                                                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
+                                                            class="icon-align-justify"></i></a>
+                                                </div>
+                                                <div class="btn-group">
+                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
+                                                       title="Hyperlink"><i class="icon-link"></i></a>
+                                                    <div class="dropdown-menu input-append">
+                                                        <input class="span2" placeholder="URL" type="text"
+                                                               data-edit="createLink"/>
+                                                        <button class="btn" type="button">Add</button>
+                                                    </div>
+                                                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i
+                                                            class="icon-cut"></i></a>
+                                                    <button type="button" class="btn btn-primary btn-sm" id="submitBtn">
+                                                        提交
+                                                    </button>
+                                                    <div id="loading"></div>
+
+                                                </div>
+
+                                                <!--<div class="btn-group">-->
+                                                <!--<a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>-->
+                                                <!--<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />-->
+                                                <!--</div>-->
+                                                <!--<div class="btn-group">-->
+                                                <!--<a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>-->
+                                                <!--<a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>-->
+                                                <!--</div>-->
+                                                <input type="text" data-edit="inserttext" id="voiceBtn"
+                                                       x-webkit-speech="">
+
+                                            </div>
+                                            <div id="editor">PLEASE INPUT...</div>
+                                            <!--<div class="btn-group">-->
+
+                                            <!--</div>-->
+
+
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                            <!--    end for insert -->
+                                        </div>
+                                    </div>
+
+
+
+                                </div><!-- /.d-md-flex -->
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+
+                </div>
+
+
+
+
+                    <!-- <div class="col-md-4">-->
+                    <!--&lt;!&ndash; Info Boxes Style 2 &ndash;&gt;-->
+                    <!--<div class="info-box mb-3 bg-warning">-->
+                    <!--<span class="info-box-icon"><i class="fa fa-tag"></i></span>-->
+
+                    <!--<div class="info-box-content">-->
+                    <!--<span class="info-box-text">Inventory</span>-->
+                    <!--<span class="info-box-number">5,200</span>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
+                    <!--<div class="info-box mb-3 bg-success">-->
+                    <!--<span class="info-box-icon"><i class="fa fa-heart-o"></i></span>-->
+
+                    <!--<div class="info-box-content">-->
+                    <!--<span class="info-box-text">Mentions</span>-->
+                    <!--<span class="info-box-number">92,050</span>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+                    <!--</div>-->
+
+                    <!--<div class="info-box mb-3 bg-danger">-->
+                    <!--<span class="info-box-icon"><i class="fa fa-cloud-download"></i></span>-->
+
+                    <!--<div class="info-box-content">-->
+                    <!--<span class="info-box-text">Downloads</span>-->
+                    <!--<span class="info-box-number">114,381</span>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
+                    <!--<div class="info-box mb-3 bg-info">-->
+                    <!--<span class="info-box-icon"><i class="fa fa-comment-o"></i></span>-->
+
+                    <!--<div class="info-box-content">-->
+                    <!--<span class="info-box-text">Direct Messages</span>-->
+                    <!--<span class="info-box-number">163,921</span>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
+                    <!--</div>-->
+
+
+                </div>
+                <!-- /.row -->
+
+            </div><!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-sm-none d-md-block">
+        </div>
+        <!-- Default to the left -->
+
+        <strong><a href="https://adminlte.io">designed by green light</a>.</strong>
+
+    </footer>
+</div>
+
+<!-- ./wrapper -->
+
+
+<script>
+  $(function(){
+    function initToolbarBootstrapBindings() {
+      var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+            'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+            'Times New Roman', 'Verdana'],
+            fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+      $.each(fonts, function (idx, fontName) {
+          fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+      });
+      $('a[title]').tooltip({container:'body'});
+    	$('.dropdown-menu input').click(function() {return false;})
+		    .change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+        .keydown('esc', function () {this.value='';$(this).change();});
+
+      $('[data-role=magic-overlay]').each(function () {
+        var overlay = $(this), target = $(overlay.data('target'));
+        overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+      });
+      if ("onwebkitspeechchange"  in document.createElement("input")) {
+        var editorOffset = $('#editor').offset();
+        $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+      } else {
+        $('#voiceBtn').hide();
+      }
+	};
+	function showErrorAlert (reason, detail) {
+		var msg='';
+		if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+		else {
+			console.log("error uploading file", reason, detail);
+		}
+		$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+
+		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+	};
+
+
+
+    initToolbarBootstrapBindings();
+	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+    window.prettyPrint && prettyPrint();
+  });
+
+
+
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#submitBtn").click(function(){
+            var htmlContent = $("#editor").html();
+            // alert("h1");
+            // alert("将要发送的内容是："+ htmlContent);
+            var sentimentUrl = "http://localhost:5000/sentiment";
+
+            var data = {
+                data: JSON.stringify({'userSubmit': htmlContent})
+            };
+
+            $.ajax({
+                url: sentimentUrl,
+                type: "POST",
+                data: data,
+                dataType: "json",
+                beforeSend: function(XMLHttpRequest){
+                    $("#loading").html("loading");
+                },
+                success: function(result){
+                    var jsonMsg = JSON.parse(JSON.stringify(result));
+                    $("#displayerEmotion").html("Emotion: " + jsonMsg.emotion);
+                    $("#displayerSubject").html("Subject: " + jsonMsg.subject);
+                    $("#loading").empty();
+                },
+                complete: function(XMLHttpRequest,textStatus){
+                    $("#loading").empty();
+                },
+                error: function(msg){
+                    alert("error!");
+                    alert("message is : "+msg);
+                    $("#loading").empty();
+                }
+            });
+            console.log(htmlContent);
+
+        });
+    }
+    );
+</script>
+
+<script>
+    $(function(){
+    $("#loading").ajaxStart(
+        function(){
+            $(this).html("loading");
+            alert("loading");
+        });
+    $("#loading").ajaxSuccess(
+        function(){
+            $(this).html("");
+        }
+    );
+
+
+
+
+});
+</script>
+
+
+</body>
+
+
     <head>
         <style type="text/css">
             p.ok {
@@ -13,9 +966,7 @@
     </head>
     <body>
         <h1>Welcome, {{ user.username }}!</h1>
-        <img src="{{ account.img.url }}" alt="img" width="200px">
         <h2>Your asset: {{ account.asset }}</h2>
-        <a href="{% url 'energy' %}">To earn more C-coins >></a>
         <h2>Your credit: {{ account.credit }}</h2>
         {% if account.is_authenticated %}
             <p class="ok">Authenticated</p>
