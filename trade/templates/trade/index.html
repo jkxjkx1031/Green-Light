@@ -261,25 +261,16 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{ url_for('index') }" class="nav-link">
+                                <a href="{% url 'market' %}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>碳市场形势</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <!-- <li class="nav-item">
-                      <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
-                        <p>
-                          Widgets
-                          <span class="right badge badge-danger">New</span>
-                        </p>
-                      </a>
-                    </li> -->
-                    <li class="nav-item has-treeview">
+                    <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <i class="nav-icon fa fa-dashboard"></i>
                             <p>
                                 交易中心
                                 <i class="right fa fa-angle-left"></i>
@@ -287,17 +278,16 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                               <a href="{ url_for('companies') }" class="nav-link">
+                               <a href="{% url 'market' %}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>交易公司</p>
                                 </a>
                             </li>
-
                         </ul>
                     </li>
-					<li class="nav-item has-treeview">
+					<li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <i class="nav-icon fa fa-dashboard"></i>
                             <p>
                                 个人中心
                                 <i class="right fa fa-angle-left"></i>
@@ -305,7 +295,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{ url_for('index') }" class="nav-link">
+                                <a href="{ url_for('account') }" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>我的账户</p>
                                 </a>

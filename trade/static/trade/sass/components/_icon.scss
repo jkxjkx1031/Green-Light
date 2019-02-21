@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ///
 /// Solid State by HTML5 UP
 /// html5up.net | @ajlkn
@@ -14,4 +15,22 @@
 		> .label {
 			display: none;
 		}
+=======
+///
+/// Solid State by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Icon */
+
+	.icon {
+		@include icon;
+		border-bottom: none;
+		position: relative;
+
+		> .label {
+			display: none;
+		}
+>>>>>>> 14463ac21deeead396ced88a3c64d2ea318b4c0a
 	}

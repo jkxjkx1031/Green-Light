@@ -1,6 +1,675 @@
 <!DOCTYPE html>
-
 <html lang="en">
+    <head>
+
+        {% load static %}
+
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Home Page</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/font-awesome/css/font-awesome.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'trade/css/ionicons.min.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/jvectormap/jquery-jvectormap-1.2.2.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'trade/css/adminlte.min.css' %}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <!-- <link rel="stylesheet" href="{% static 'trade/css/skins/_all-skins.min.css' %}"> -->
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <!--REQUIRED SCRIPTS-->
+    <!-- jQuery -->
+    <script src="{% static 'trade/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'trade/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'trade/js/adminlte.js' %}"></script>
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="{% static 'trade/js/demo.js' %}"></script>
+
+    <!-- PAGE PLUGINS -->
+    <!-- SparkLine -->
+    <script src="{% static 'trade/plugins/sparkline/jquery.sparkline.min.js' %}"></script>
+    <!-- jVectorMap -->
+    <script src="{% static 'trade/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+    <script src="{% static 'trade/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="{% static 'trade/plugins/slimScroll/jquery.slimscroll.min.js' %}"></script>
+    <!-- ChartJS 1.0.2 -->
+    <script src="{% static 'trade/plugins/chartjs-old/Chart.min.js' %}"></script>
+
+    <!-- PAGE SCRIPTS -->
+    <script src="{% static 'trade/js/pages/dashboard2.js' %}"></script>
+
+    <script src="{% static 'trade/js/pages/salesboard.js' %}"></script>
+
+
+    <!--<link rel="apple-touch-icon" href="//mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" />-->
+    <!--<link rel="shortcut icon" href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico">-->
+    <link href="{% static 'trade/js/external/google-code-prettify/prettify.css' %}" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">-->
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="{% static 'trade/js/external/jquery.hotkeys.js' %}"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'trade/js/external/google-code-prettify/prettify.js' %}"></script>
+    <link href="{% static 'trade/css/index4-append.css' %}" rel="stylesheet">
+    <script src="{% static 'trade/js/bootstrap-wysiwyg.js' %}"></script>
+
+    </head>
+
+
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+        <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <!-- <li class="nav-item d-none d-sm-inline-block">
+              <a href="#" class="nav-link">Contact</a>
+            </li> -->
+        </ul>
+
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-comments-o"></i>
+                    <span class="badge badge-danger navbar-badge">3</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user1-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 mr-3 img-circle">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Xu Xiangrong
+                                    <span class="float-right text-sm text-danger"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">Call me whenever you can...</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user8-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Jin Kaixiang
+                                    <span class="float-right text-sm text-muted"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">I got your message bro</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{% static 'trade/image/user3-128x128.jpg' %}" alt="User Avatar"
+                                 class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Jiang Wenjie
+                                    <span class="float-right text-sm text-warning"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">The subject goes here</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                </div>
+            </li>
+
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge badge-warning navbar-badge">15</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope mr-2"></i> 4 new messages
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-users mr-2"></i> 8 friend requests
+                        <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-file mr-2"></i> 3 new reports
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                        class="fa fa-th-large"></i></a>
+            </li>
+        </ul>
+
+
+    </nav>
+    <!-- /.navbar -->
+
+
+            <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+            <img src="{% static 'trade/image/nba_data.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">Green Light</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="{% static 'trade/image/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">{{ user.username }}</a>
+                </div>
+            </div>
+
+
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>碳市场
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'market' %}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>碳市场形势</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>
+                                交易中心
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                               <a href="{% url 'market' %}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>交易公司</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+					<li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>
+                                个人中心
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{ url_for('account') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>我的账户</p>
+                                </a>
+                            </li>
+							<li class="nav-item">
+                                <a href="{ url_for('history') }" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>我的交易记录</p>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+            <!-- Start right Content here -->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                 <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">交易中心</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div><!-- /.col -->
+                 </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+        <!-- /.content-header -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+
+                    <div class="page-content-wrapper ">
+
+                        <div class="container-fluid">
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-2.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Pauline I. Bird</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end col -->
+
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-3.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Ralph L. Alva</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-4.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">John B. Roman</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-5.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">James M. Caviness</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-6.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Peter F. Costanzo</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-1.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Lewis S. Cruz</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-3.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Thomas C. Wheeler</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-4.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">David O. Buckley</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+
+                                            <div class="media">
+                                                <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-5.jpg' %}">
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 font-18 mb-1">Johnny W. Seitz</h5>
+                                                    <p class="text-muted font-14">Webdeveloper</p>
+
+                                                    <ul class="social-links list-inline mb-0">
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+                        </div><!-- container -->
+
+                    </div> <!-- Page content Wrapper -->
+
+                </div> <!-- content -->
+
+            </div>
+        </div>
+            <!-- End Right content here -->
+        </div>
+    </body>
+        <!-- END wrapper -->
+</html>
+
+        <!-- jQuery  -->
+        <script src="{% static 'trade/js/jquery.min.js' %}"></script>
+        <script src="{% static 'trade/js/popper.min.js' %}"></script>
+        <script src="{% static 'trade/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'trade/js/modernizr.min.js' %}"></script>
+        <script src="{% static 'trade/js/detect.js' %}"></script>
+        <script src="{% static 'trade/js/fastclick.js' %}"></script>
+        <script src="{% static 'trade/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'trade/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'trade/js/waves.js' %}"></script>
+        <script src="{% static 'trade/js/jquery.nicescroll.js' %}"></script>
+        <script src="{% static 'trade/js/jquery.scrollTo.min.js' %}"></script>
+
+
+        <!-- App js -->
+        <script src="{% static 'trade/js/app.js"></script>
+    </body>
+</html>
+
+
     <head>
         <style type="text/css">
             a.ok {
