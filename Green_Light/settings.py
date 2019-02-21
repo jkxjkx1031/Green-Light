@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_crontab',
+ #   'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -122,8 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
-
+#MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
+MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/trade/media/'
 
 # CRONTAB
 
