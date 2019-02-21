@@ -121,9 +121,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import platform
+
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
-MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/trade/media/'
+
+if platform.system() == 'Linux':
+    MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
+else:
+    MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/trade/media/'
+
 
 # CRONTAB
 
