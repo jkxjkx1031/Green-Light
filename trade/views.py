@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 
 from .forms import LoginForm
 from .models import Product, EnergyAccount
+from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
 
 def index(request):
@@ -65,3 +66,17 @@ def energy_display(request):
         'energy_account': ea
     }
     return render(request, 'trade/energy.html', context)
+
+
+def wechat_crypt_view(request):
+    if(request.method == 'POST'):
+        data = request.POST
+        app_id = data.get('appId')
+        session_key = data.get('sessionKey')
+        encrypted_data = data.get('encryptedData')
+        iv = data.get('iv')
+        pc = WXBizDataCrypt(app_id, session_key)
+        decrypted_data = pc.decrypt(encrypted_data, iv)
+        return JsonResponse({'decryptedData': decrypted_data})
+    else:
+        pass
