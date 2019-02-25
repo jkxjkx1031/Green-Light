@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 
 from .forms import LoginForm
@@ -68,15 +69,19 @@ def energy_display(request):
     return render(request, 'trade/energy.html', context)
 
 
+@csrf_exempt
 def wechat_crypt_view(request):
-    if(request.method == 'POST'):
+    if request.method == 'POST':
         data = request.POST
-        app_id = data.get('appId')
-        session_key = data.get('sessionKey')
-        encrypted_data = data.get('encryptedData')
-        iv = data.get('iv')
+    else:
+        data = request.GET
+    app_id = data.get('appId')
+    session_key = data.get('sessionKey')
+    encrypted_data = data.get('encryptedData')
+    iv = data.get('iv')
+    if request.method == 'POST':
         pc = WXBizDataCrypt(app_id, session_key)
         decrypted_data = pc.decrypt(encrypted_data, iv)
         return JsonResponse({'decryptedData': decrypted_data})
     else:
-        pass
+        return HttpResponse('<h1>GET</h1></br>appId: %s</br>sessionKey: %s</br>encryptedData: %s</br>iv: %s' % (app_id, session_key, encrypted_data, iv))
