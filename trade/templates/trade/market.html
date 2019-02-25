@@ -74,7 +74,6 @@
 
 
 
-</head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
@@ -259,7 +258,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{% url 'market' %}" class="nav-link">
+                                <a href="{% url 'index' %}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>碳市场形势</p>
                                 </a>
@@ -293,7 +292,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{ url_for('account') }" class="nav-link">
+                                <a href="{% url 'energy' %}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>我的账户</p>
                                 </a>
@@ -573,7 +572,7 @@
 
                                 <div class="col-lg-4">
                                     <div class="card m-b-30">
-                                        <div class="card-body">
+                                        <div class="card-bo8dy">
 
                                             <div class="media">
                                                 <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{% static 'trade/image/users/avatar-4.jpg' %}">
@@ -648,7 +647,6 @@
         </div>
     </body>
         <!-- END wrapper -->
-</html>
 
         <!-- jQuery  -->
         <script src="{% static 'trade/js/jquery.min.js' %}"></script>
@@ -666,7 +664,6 @@
 
         <!-- App js -->
         <script src="{% static 'trade/js/app.js"></script>
-    </body>
 </html>
 
 
