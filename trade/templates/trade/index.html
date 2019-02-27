@@ -215,7 +215,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="#" class="brand-link">
-            <img src="{% static 'trade/image/nba_data.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <img src="{% static 'trade/image/green-light.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">Green Light</span>
         </a>
@@ -225,7 +225,7 @@
             <!-- Sidebar user (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{% static 'trade/image/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ account.img.url }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{ user.username }}</a>
@@ -342,71 +342,6 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <!-- Info boxes -->
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1"><i class="fa fa-gear"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">YEAR</span>
-                                <span class="info-box-number">
-                  <small></small>
-                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-institution"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">BRAND</span>
-                                <span class="info-box-number"></span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-
-                    <!-- fix for small devices only -->
-                    <div class="clearfix hidden-md-up"></div>
-
-
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fa fa-commenting"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">TYPE</span>
-                                <span class="info-box-number"></span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-
-
-                    <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">BUYER</span>
-                                <span class="info-box-number"></span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-
-                </div>
-                <!-- /.row -->
 
                 <div class="row">
                     <div class="col-md-12">
@@ -463,34 +398,6 @@
 
                                         </div>
 
-                                        <button type="button" class="btn btn-primary btn-sm" id="submitBtn2">
-                                                        OVERVIEW THE SALES
-                                                    </button>
-
-                                        <li class="cr string">
-                                            <div><span class="property-name">TYPE</span>
-                                                <div class="c">
-                                                    <select id="select_car">
-                                                        <option value="价格">Volkswagen Cross Santana</option>
-                                                        <option value="配置">Volkswagen Cross Polo</option>
-                                                        <option value="操控">Toyota Motors</option>
-                                                        <option value="舒适性">Audi Q7</option>
-                                                        <option value="油耗">Audi A3</option>
-                                                        <option value="动力">Audi A4L</option>
-                                                        <option value="内饰">Audi S3</option>
-                                                        <option value="安全性">Audi A4</option>
-                                                        <option value="空间">Audi S7</option>
-                                                        <option value="外观">Audi Q3</option>
-                                                        <option value="刹车">Audi TT</option>
-                                                        <option value="品牌价值">Audi RS 3</option>
-                                                        <option value="百公里速度">Audi RS 4</option>
-                                                        <option value="邮箱容量">Audi TT R8</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- /.chart-responsive-->
                                     </div>
 
 
@@ -595,209 +502,68 @@
                 <!-- /.row -->
 
                 <!-- Main row -->
+                <!-- Info boxes -->
                 <div class="row">
-                    <!-- Left col -->
-                    <div class="col-md-8">
-                        <!-- MAP & BOX PANE -->
-                        <div class="card">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fa fa-gear"></i></span>
 
-
-                            <div class="card-header">
-                                <h3 class="card-title">PLEASE WRITE YOUR COMMENT HERE</h3>
-
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-widget="collapse">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-widget="remove">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
+                            <div class="info-box-content">
+                                <span class="info-box-text">YEAR</span>
+                                <span class="info-box-number">
+                  <small></small>
+                </span>
                             </div>
-
-
-                            <!-- /.card-header -->
-
-                            <div class="card-body p-0">
-                                <div class="d-md-flex">
-                                    <div class="p-1 flex-1" style="overflow: hidden">
-                                        <!-- Map will be created here -->
-                                        <div id="world-map-markers" style="height: 325px; overflow: hidden">
-
-
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-                                            <!--begin for insert  -->
-
-                                            <div id="alerts"></div>
-                                            <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
-                                                <!--<div class="btn-group">-->
-                                                <!--<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>-->
-                                                <!--<ul class="dropdown-menu">-->
-                                                <!--</ul>-->
-                                                <!--</div>-->
-                                                <div class="btn-group">
-                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
-                                                       title="Font Size"><i class="icon-text-height"></i>&nbsp;<b
-                                                            class="caret"></b></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a data-edit="fontSize 5"><font size="5">Huge</font></a>
-                                                        </li>
-                                                        <li><a data-edit="fontSize 3"><font size="3">Normal</font></a>
-                                                        </li>
-                                                        <li><a data-edit="fontSize 1"><font size="1">Small</font></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i
-                                                            class="icon-bold"></i></a>
-                                                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i
-                                                            class="icon-italic"></i></a>
-                                                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i
-                                                            class="icon-strikethrough"></i></a>
-                                                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
-                                                            class="icon-underline"></i></a>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <a class="btn" data-edit="insertunorderedlist"
-                                                       title="Bullet list"><i class="icon-list-ul"></i></a>
-                                                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i
-                                                            class="icon-list-ol"></i></a>
-                                                    <a class="btn" data-edit="outdent"
-                                                       title="Reduce indent (Shift+Tab)"><i
-                                                            class="icon-indent-left"></i></a>
-                                                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i
-                                                            class="icon-indent-right"></i></a>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <a class="btn" data-edit="justifyleft"
-                                                       title="Align Left (Ctrl/Cmd+L)"><i
-                                                            class="icon-align-left"></i></a>
-                                                    <a class="btn" data-edit="justifycenter"
-                                                       title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
-                                                    <a class="btn" data-edit="justifyright"
-                                                       title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
-                                                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
-                                                            class="icon-align-justify"></i></a>
-                                                </div>
-                                                <div class="btn-group">
-                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
-                                                       title="Hyperlink"><i class="icon-link"></i></a>
-                                                    <div class="dropdown-menu input-append">
-                                                        <input class="span2" placeholder="URL" type="text"
-                                                               data-edit="createLink"/>
-                                                        <button class="btn" type="button">Add</button>
-                                                    </div>
-                                                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i
-                                                            class="icon-cut"></i></a>
-                                                    <button type="button" class="btn btn-primary btn-sm" id="submitBtn">
-                                                        提交
-                                                    </button>
-                                                    <div id="loading"></div>
-
-                                                </div>
-
-                                                <!--<div class="btn-group">-->
-                                                <!--<a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>-->
-                                                <!--<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />-->
-                                                <!--</div>-->
-                                                <!--<div class="btn-group">-->
-                                                <!--<a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>-->
-                                                <!--<a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>-->
-                                                <!--</div>-->
-                                                <input type="text" data-edit="inserttext" id="voiceBtn"
-                                                       x-webkit-speech="">
-
-                                            </div>
-                                            <div id="editor">PLEASE INPUT...</div>
-                                            <!--<div class="btn-group">-->
-
-                                            <!--</div>-->
-
-
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                            <!--    end for insert -->
-                                        </div>
-                                    </div>
-
-
-
-                                </div><!-- /.d-md-flex -->
-                            </div>
-                            <!-- /.card-body -->
+                            <!-- /.info-box-content -->
                         </div>
-                        <!-- /.card -->
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-institution"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">BRAND</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix hidden-md-up"></div>
 
 
-                </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fa fa-commenting"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">TYPE</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
 
 
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
 
-
-                    <!-- <div class="col-md-4">-->
-                    <!--&lt;!&ndash; Info Boxes Style 2 &ndash;&gt;-->
-                    <!--<div class="info-box mb-3 bg-warning">-->
-                    <!--<span class="info-box-icon"><i class="fa fa-tag"></i></span>-->
-
-                    <!--<div class="info-box-content">-->
-                    <!--<span class="info-box-text">Inventory</span>-->
-                    <!--<span class="info-box-number">5,200</span>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
-                    <!--<div class="info-box mb-3 bg-success">-->
-                    <!--<span class="info-box-icon"><i class="fa fa-heart-o"></i></span>-->
-
-                    <!--<div class="info-box-content">-->
-                    <!--<span class="info-box-text">Mentions</span>-->
-                    <!--<span class="info-box-number">92,050</span>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
-                    <!--</div>-->
-
-                    <!--<div class="info-box mb-3 bg-danger">-->
-                    <!--<span class="info-box-icon"><i class="fa fa-cloud-download"></i></span>-->
-
-                    <!--<div class="info-box-content">-->
-                    <!--<span class="info-box-text">Downloads</span>-->
-                    <!--<span class="info-box-number">114,381</span>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
-                    <!--<div class="info-box mb-3 bg-info">-->
-                    <!--<span class="info-box-icon"><i class="fa fa-comment-o"></i></span>-->
-
-                    <!--<div class="info-box-content">-->
-                    <!--<span class="info-box-text">Direct Messages</span>-->
-                    <!--<span class="info-box-number">163,921</span>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box-content &ndash;&gt;-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; /.info-box &ndash;&gt;-->
-                    <!--</div>-->
-
+                            <div class="info-box-content">
+                                <span class="info-box-text">BUYER</span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
 
                 </div>
                 <!-- /.row -->
@@ -821,9 +587,6 @@
         <div class="float-right d-sm-none d-md-block">
         </div>
         <!-- Default to the left -->
-
-        <strong><a href="https://adminlte.io">designed by green light</a>.</strong>
-
     </footer>
 </div>
 
@@ -944,26 +707,4 @@
 </body>
 
 
-    <head>
-        <style type="text/css">
-            p.ok {
-                color: green;
-            }
-            p.danger {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Welcome, {{ user.username }}!</h1>
-        <h2>Your asset: {{ account.asset }}</h2>
-        <h2>Your credit: {{ account.credit }}</h2>
-        {% if account.is_authenticated %}
-            <p class="ok">Authenticated</p>
-        {% else %}
-            <p class="danger">Unauthenticated</p>
-        {% endif %}
-        <a href="{% url 'market' %}">Browse the market -></a>
-        <a href="{% url 'logout' %}">log out</a>
-    </body>
 </html>

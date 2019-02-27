@@ -25,7 +25,9 @@ SECRET_KEY = 'c05q&%b@1rr3fk%ywqhhpk4&^bpluo5c^-i1ve=dmh-dic5n^d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -121,9 +123,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import platform
+
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
-MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/media/'
+
+if platform.system() == 'Linux':
+    MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
+else:
+    MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/trade/media/'
+
 
 # CRONTAB
 
