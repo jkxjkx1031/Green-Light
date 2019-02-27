@@ -9,6 +9,8 @@ from .forms import LoginForm
 from .models import Product, EnergyAccount
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
+import json
+
 
 def index(request):
     if request.user.is_authenticated:
@@ -72,7 +74,7 @@ def energy_display(request):
 @csrf_exempt
 def wechat_crypt_view(request):
     if request.method == 'POST':
-        data = request.POST
+        data = json.loads(request.body)
     else:
         data = request.GET
     app_id = data.get('appId')
@@ -82,6 +84,29 @@ def wechat_crypt_view(request):
     if request.method == 'POST':
         pc = WXBizDataCrypt(app_id, session_key)
         decrypted_data = pc.decrypt(encrypted_data, iv)
-        return JsonResponse({'decryptedData': decrypted_data})
+        steps = decrypted_data['stepInfoList'][-1]['step']
+        ts = decrypted_data['watermark']['timestamp']
+        return JsonResponse({'steps': steps, 'timestamp': ts})
     else:
         return HttpResponse('<h1>GET</h1></br>appId: %s</br>sessionKey: %s</br>encryptedData: %s</br>iv: %s' % (app_id, session_key, encrypted_data, iv))
+
+
+@csrf_exempt
+def wechat_upload_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data['username']
+        password = data['password']
+        steps = data['steps']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None and user.is_active:
+            auth.login(request, user)
+            ea = user.account.energyaccount
+            ea.energy = steps
+            ea.save()
+            auth.logout(request)
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False})
+    else:
+        return HttpResponse('<h1>GET</h1>')

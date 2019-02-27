@@ -8,5 +8,6 @@ urlpatterns = [
     path('market/', views.market, name='market'),
     path('market/<int:product_id>/', views.product_detail, name='product_detail'),
     path('energy/', views.energy_display, name='energy'),
-    path('wxcrypt/', views.wechat_crypt_view, name='crypt'),
+    path('wxcrypt/', views.wechat_crypt_view, name='wxcrypt'),
+    path('wxupload/', views.wechat_upload_view, name='wxupload'),
 ]
