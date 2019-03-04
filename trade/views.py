@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 
 from .forms import LoginForm
-from .models import Product, EnergyAccount
+from .models import Product
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
 import json
@@ -64,9 +64,9 @@ def product_detail(request, product_id):
 
 @login_required(login_url='/login/')
 def energy_display(request):
-    ea = get_object_or_404(EnergyAccount, pk=request.user.account.energyaccount.id)
     context = {
-        'energy_account': ea
+        'account': request.user.account,
+        'energy_account': request.user.account.energyaccount
     }
     return render(request, 'trade/energy.html', context)
 
