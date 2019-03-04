@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 
 from .forms import LoginForm
-from .models import Product
+from .models import Product, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
 import json
@@ -14,8 +14,15 @@ import json
 
 def index(request):
     if request.user.is_authenticated:
+        ccy_list = get_list_or_404(CarbonCoinCcy)
+        if len(ccy_list) > 15:
+            ccy_list = ccy_list[:15]
+        ccy_list.reverse()
         context = {
-            'account': request.user.account
+            'account': request.user.account,
+            'dates': [entry.date.strftime('%m.%d') for entry in ccy_list],
+            'prices': [entry.close for entry in ccy_list],
+            'last_updated': ccy_list[0].date.strftime('%b.%d, %Y')
         }
         return render(request, 'trade/index.html', context)
     else:
