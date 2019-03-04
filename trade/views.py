@@ -17,12 +17,17 @@ def index(request):
         ccy_list = get_list_or_404(CarbonCoinCcy)
         if len(ccy_list) > 15:
             ccy_list = ccy_list[:15]
+        inc3 = round((ccy_list[0].close - ccy_list[3].close) / ccy_list[3].close * 100)
+        inc7 = round((ccy_list[0].close - ccy_list[7].close) / ccy_list[7].close * 100)
         ccy_list.reverse()
         context = {
             'account': request.user.account,
-            'dates': [entry.date.strftime('%m.%d') for entry in ccy_list],
+            'dates': [entry.date.strftime('%b %d') for entry in ccy_list],
             'prices': [entry.close for entry in ccy_list],
-            'last_updated': ccy_list[0].date.strftime('%b.%d, %Y')
+            'last_updated': ccy_list[0].date.strftime('%b %d, %Y'),
+            'inc3': inc3,
+            'inc7': inc7,
+            'price_today': '$%.6f' % ccy_list[0].close
         }
         return render(request, 'trade/index.html', context)
     else:
