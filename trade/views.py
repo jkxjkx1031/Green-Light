@@ -9,12 +9,13 @@ from .forms import LoginForm
 from .models import Product, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
-import json
+import json, operator
 
 
 def index(request):
     if request.user.is_authenticated:
         ccy_list = get_list_or_404(CarbonCoinCcy)
+        ccy_list = sorted(ccy_list, key=operator.attrgetter('date'), reverse=True)
         if len(ccy_list) > 15:
             ccy_list = ccy_list[:15]
         inc3 = round((ccy_list[0].close - ccy_list[3].close) / ccy_list[3].close * 100)
@@ -24,10 +25,10 @@ def index(request):
             'account': request.user.account,
             'dates': [entry.date.strftime('%b %d') for entry in ccy_list],
             'prices': [entry.close for entry in ccy_list],
-            'last_updated': ccy_list[0].date.strftime('%b %d, %Y'),
+            'last_updated': ccy_list[-1].date.strftime('%b %d, %Y'),
             'inc3': inc3,
             'inc7': inc7,
-            'price_today': '$%.6f' % ccy_list[0].close
+            'price_today': '$%.6f' % ccy_list[-1].close
         }
         return render(request, 'trade/index.html', context)
     else:
