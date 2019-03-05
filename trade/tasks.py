@@ -14,5 +14,11 @@ def energy_gather():
     sum_of_level = sum(recorded_level)
     for (idx, ea) in enumerate(ea_objects):
         if recorded_level[idx] != 0:
-            ea.account.asset += int(TOTAL_CC_SCATTER_DAILY * recorded_level[idx] / sum_of_level)
-            ea.account.save()
+            reward = int(TOTAL_CC_SCATTER_DAILY * recorded_level[idx] / sum_of_level)
+        else:
+            reward = 0
+        ea.account.asset += reward
+        ea.account.save()
+        ea.reward = reward
+        ea.save()
+        print('%s: %s +%d | asset: %d;' % (timezone.now(), ea.account.user.username, reward, ea.account.asset))

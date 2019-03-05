@@ -373,6 +373,7 @@
                                            <span class="counter text-dark">我的帐号：</span>
                                             ？？？
                                            <span class="counter text-dark">我的等级：</span>
+                                           {{ energy_account.energy_level }} <br/></br>
                                             ？？？
                                             之后这里准备写点备注什么的 右边放等级图 然后让两边的card一样长？
                                         </div>
@@ -408,7 +409,7 @@
                                     <div class="mini-stat clearfix bg-success">
                                         <span class="mini-stat-icon bg-light"><i class="mdi mdi-currency-usd text-success"></i></span>
                                         <div class="mini-stat-info text-right text-white">
-                                            <span class="counter text-white">956</span>
+                                            <span class="counter text-white">1234321</span>
                                             新增步数
                                         </div>
                                         <p class="mb-0 m-t-20 text-light">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
@@ -428,8 +429,8 @@
                                     <div class="mini-stat clearfix bg-info">
                                         <span class="mini-stat-icon bg-light"><i class="mdi mdi-currency-btc text-info"></i></span>
                                         <div class="mini-stat-info text-right text-light">
-                                            <span class="counter text-white">20544</span>
-                                            我的收益
+                                            <span class="counter text-white">{{ energy_account.reward }}</span>
+                                            昨日收益
                                         </div>
                                         <p class="mb-0 m-t-20 text-light">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                                     </div>

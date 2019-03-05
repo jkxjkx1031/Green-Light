@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- #   'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -123,18 +122,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-import platform
-
 MEDIA_URL = '/media/'
-
-if platform.system() == 'Linux':
-    MEDIA_ROOT = '/home/kaixiang/Green_Light/trade/media/'
-else:
-    MEDIA_ROOT = 'C:/Users/Dell/Green-Light/trade/trade/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'trade/media/')
 
 
 # CRONTAB
 
+import platform
+
+if platform.system() == 'Linux':
+    INSTALLED_APPS.append('django_crontab')
+
 CRONJOBS = [
-    ('*/1 * * * *', 'trade.tasks.energy_gather', '>> /home/kaixiang/Green_Light/trade/logs/crontab_log.txt')
+    ('* * * * *', 'trade.tasks.energy_gather', '>> ' + os.path.join(BASE_DIR, 'trade/logs/crontab_log.txt'))
 ]

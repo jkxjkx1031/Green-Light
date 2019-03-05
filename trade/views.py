@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
+from django.utils import timezone
 
 from .forms import LoginForm
 from .models import Product, CarbonCoinCcy
@@ -116,9 +117,10 @@ def wechat_upload_view(request):
             auth.login(request, user)
             ea = user.account.energyaccount
             ea.energy = steps
+            ea.last_uploaded = timezone.now()
             ea.save()
             auth.logout(request)
-            return JsonResponse({'success': True})
+            return JsonResponse({'success': True, 'uploadTime': ea.last_uploaded})
         else:
             return JsonResponse({'success': False})
     else:

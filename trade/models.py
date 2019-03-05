@@ -20,6 +20,8 @@ class EnergyAccount(models.Model):
     account = models.OneToOneField(Account, models.CASCADE)
     energy = models.IntegerField(default=0)
     last_refreshed = models.DateTimeField()
+    last_uploaded = models.DateTimeField()
+    reward = models.IntegerField(default=0)
     def energy_level(self):
         return self.energy // ENERGY_LEVEL_INCREMENT
 
