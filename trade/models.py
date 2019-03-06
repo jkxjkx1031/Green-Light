@@ -24,6 +24,10 @@ class EnergyAccount(models.Model):
     reward = models.IntegerField(default=0)
     def energy_level(self):
         return self.energy // ENERGY_LEVEL_INCREMENT
+    def next_level(self):
+        return (self.energy_level() + 1) * ENERGY_LEVEL_INCREMENT
+    def progress(self):
+        return self.energy * 100 // self.next_level()
 
 class CarbonCoinCcy(models.Model):
     date = models.DateField(unique=True)

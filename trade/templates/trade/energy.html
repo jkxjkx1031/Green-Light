@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'trade/plugins/bootstrap/css/bootstrap.min.css' %}">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{% static 'trade/plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{% static 'trade/css/ionicons.min.css' %}">
     <!-- jvectormap -->
@@ -367,22 +368,61 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="mini-stat clearfix bg-white">
+                                    <div class="mini-stat clearfix bg-white pr-5" style="height: 330px">
                                         <div class="mini-stat-info text-muted">
-                                           <span class="counter text-dark">Welcome!</span>
-                                           <span class="counter text-dark">我的帐号：</span>
-                                            ？？？
-                                           <span class="counter text-dark">我的等级：</span>
-                                           {{ energy_account.energy_level }} <br/></br>
-                                            ？？？
-                                            之后这里准备写点备注什么的 右边放等级图 然后让两边的card一样长？
+                                            <span class="counter text-muted">我的帐号：</span></br>
+                                            <div class="pl-4">
+                                                <p class="h5 mb-1 text-dark">余额：{{ account.asset }}.00</p>
+                                                <p class="h5 mb-3 text-dark">信用：{{ account.credit }}</p>
+                                                {% if account.is_individual %}
+                                                    <p class="text-info mb-0">
+                                                        <i class="fas fa-user text-info"></i> 个人用户
+                                                    </p>
+                                                {% else %}
+                                                    <p class="text-danger mb-0">
+                                                        <i class="fas fa-trademark text-danger"></i> 企业用户
+                                                    </p>
+                                                {% endif %}
+                                                {% if account.is_authenticated %}
+                                                    <p class="text-success mb-0">
+                                                        <i class="fas fa-id-card text-success"></i> 已认证
+                                                    </p>
+                                                {% else %}
+                                                    <p class="text-warning mb-0">
+                                                        <i class="fas fa-exclamation-triangle text-warning"></i> 未认证
+                                                    </p>
+                                                {% endif %}
+                                                </br>
+                                            </div>
+                                            <span class="counter text-muted">我的等级：</span></br>
+                                            <div class="progress-group pl-4">
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: {{ energy_account.progress }}%" aria-valuenow="{{ energy_account.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                LV. {{ energy_account.energy_level }}
+                                                <p class="float-right"><b>{{ energy_account.energy }}</b> / {{ energy_account.next_level }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mini-stat clearfix bg-white">
-                                        <div class="mini-stat-info text-right text-muted">
-                                           <img class="card-img-top img-fluid" src="{% static 'trade/image/small/img-1.jpg' %}" alt="Card image cap">
+                                    <div class="mini-stat clearfix bg-secondary" style="height: 330px">
+                                        <div class="mini-stat-info text-right text-muted d-flex justify-content-center">
+                                            {% if energy_account.energy_level == 0 %}
+                                                <img class="mt-4" src="{% static 'trade/image/levels/grass.png' %}" alt="Card image cap" height="250px">
+                                            {% elif energy_account.energy_level == 1 %}
+                                                <img class="" src="{% static 'trade/image/levels/lotus.jpg' %}" alt="Card image cap" height="300px">
+                                            {% elif energy_account.energy_level == 2 %}
+                                                <img class="" src="{% static 'trade/image/levels/bamboo.jpg' %}" alt="Card image cap" height="300px">
+                                            {% elif energy_account.energy_level == 3 %}
+                                                <img class="" src="{% static 'trade/image/levels/smtree.png' %}" alt="Card image cap" height="300px">
+                                            {% elif energy_account.energy_level == 4 %}
+                                                <img class="" src="{% static 'trade/image/levels/tree.jpg' %}" alt="Card image cap" height="300px">
+                                            {% elif energy_account.energy_level == 5 %}
+                                                <img class="" src="{% static 'trade/image/levels/willow.jpg' %}" alt="Card image cap" height="300px">
+                                            {% else %}
+                                                <img class="" src="{% static 'trade/image/levels/pinetree.png' %}" alt="Card image cap" height="300px">
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -397,93 +437,37 @@
                             <div class="row">
                                 <div class="col-md-6 col-xl-3">
                                     <div class="mini-stat clearfix bg-white">
-                                        <span class="mini-stat-icon bg-light"><i class="mdi mdi-cart-outline text-danger"></i></span>
+                                        <span class="mini-stat-icon bg-light"><i class="fas fa-walking text-danger"></i></span>
                                         <div class="mini-stat-info text-right text-muted">
                                             <span class="counter text-danger">{{ energy_account.energy }}</span>
                                             总步数
                                         </div>
-                                        <p class="mb-0 m-t-20 text-muted">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xl-3">
                                     <div class="mini-stat clearfix bg-success">
-                                        <span class="mini-stat-icon bg-light"><i class="mdi mdi-currency-usd text-success"></i></span>
+                                        <span class="mini-stat-icon bg-light"><i class="fas fa-burn text-success"></i></span>
                                         <div class="mini-stat-info text-right text-white">
-                                            <span class="counter text-white">1234321</span>
-                                            新增步数
+                                            <span class="counter text-white">317</span>
+                                            总能量币
                                         </div>
-                                        <p class="mb-0 m-t-20 text-light">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xl-3">
                                     <div class="mini-stat clearfix bg-white">
-                                        <span class="mini-stat-icon bg-light"><i class="mdi mdi-cube-outline text-warning"></i></span>
+                                        <span class="mini-stat-icon bg-light"><i class="fas fa-chart-line text-warning"></i></span>
                                         <div class="mini-stat-info text-right text-muted">
-                                            <span class="counter text-warning">{{ account.asset }}</span>
-                                            我的碳币
+                                            <span class="counter text-warning">{{ energy_account.reward }}</span>
+                                            昨日收益
                                         </div>
-                                        <p class="mb-0 m-t-20 text-muted">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xl-3">
                                     <div class="mini-stat clearfix bg-info">
-                                        <span class="mini-stat-icon bg-light"><i class="mdi mdi-currency-btc text-info"></i></span>
+                                        <span class="mini-stat-icon bg-light"><i class="fas fa-dollar-sign text-info"></i></span>
                                         <div class="mini-stat-info text-right text-light">
-                                            <span class="counter text-white">{{ energy_account.reward }}</span>
-                                            昨日收益
-                                        </div>
-                                        <p class="mb-0 m-t-20 text-light">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card m-b-30">
-                                        <div class="card-body">
-                                            <h4 class="mt-0 header-title">我的步数</h4>
-
-                                            <ul class="list-inline widget-chart m-t-20 text-center">
-                                                <li>
-                                                    <h4 class=""><b>3652</b></h4>
-                                                    <p class="text-muted m-b-0">Marketplace</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>5421</b></h4>
-                                                    <p class="text-muted m-b-0">Last week</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>9652</b></h4>
-                                                    <p class="text-muted m-b-0">Last Month</p>
-                                                </li>
-                                            </ul>
-
-                                            <div id="morris-area-example" style="height: 300px"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="card m-b-30">
-                                        <div class="card-body">
-                                            <h4 class="mt-0 header-title">我的收益</h4>
-
-                                            <ul class="list-inline widget-chart m-t-20 text-center">
-                                                <li>
-                                                    <h4 class=""><b>5248</b></h4>
-                                                    <p class="text-muted m-b-0">Marketplace</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>321</b></h4>
-                                                    <p class="text-muted m-b-0">Last week</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>964</b></h4>
-                                                    <p class="text-muted m-b-0">Last Month</p>
-                                                </li>
-                                            </ul>
-
-                                            <div id="morris-bar-example" style="height: 300px"></div>
+                                            <span class="counter text-white">{{ account.asset }}</span>
+                                            我的碳币
                                         </div>
                                     </div>
                                 </div>
@@ -491,7 +475,7 @@
 
                             <div class="row">
 
-                                <div class="col-xl-8">
+                                <div class="col-xl-12">
                                     <div class="card m-b-30">
                                         <div class="card-body">
                                             <h4 class="mt-0 m-b-15 header-title">Recent Candidates</h4>
@@ -562,31 +546,6 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4">
-                                    <div class="card m-b-30">
-                                        <div class="card-body">
-                                            <h4 class="mt-0 header-title">Monthly Earnings</h4>
-
-                                            <ul class="list-inline widget-chart m-t-20 text-center">
-                                                <li>
-                                                    <h4 class=""><b>3654</b></h4>
-                                                    <p class="text-muted m-b-0">Marketplace</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>954</b></h4>
-                                                    <p class="text-muted m-b-0">Last week</p>
-                                                </li>
-                                                <li>
-                                                    <h4 class=""><b>8462</b></h4>
-                                                    <p class="text-muted m-b-0">Last Month</p>
-                                                </li>
-                                            </ul>
-
-                                            <div id="morris-donut-example" style="height: 265px"></div>
                                         </div>
                                     </div>
                                 </div>
