@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="693d66a4-66c2-446b-8992-b5700cfd8f39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/trade/static/trade/plugins/chart.js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/plugins/chart.js/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/static/trade/plugins/datatables/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/plugins/datatables/jquery.dataTables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/static/trade/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/static/trade/plugins/morris/morris.css" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/plugins/morris/morris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/static/trade/plugins/morris/morris.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/plugins/morris/morris.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/templates/trade/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade/templates/trade/market.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/static/trade/pages/morris.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/pages/morris.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/templates/trade/energy.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/energy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/templates/trade/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trade/templates/trade/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,31 +31,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="9" />
+          <entry key="html" value="11" />
           <entry key="js" value="4" />
-          <entry key="py" value="6" />
+          <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="11" />
           <entry key="JavaScript" value="4" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="23" />
-          <entry key="html" value="1227" />
-          <entry key="js" value="33" />
+          <entry key="html" value="1443" />
+          <entry key="js" value="203" />
+          <entry key="py" value="133" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="23" />
-          <entry key="HTML" value="1227" />
-          <entry key="JavaScript" value="33" />
+          <entry key="HTML" value="1443" />
+          <entry key="JavaScript" value="203" />
+          <entry key="Python" value="133" />
         </counts>
       </usages-collector>
     </session>
@@ -65,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/templates/trade/market.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="6593">
               <caret line="392" column="23" lean-forward="true" selection-start-line="392" selection-start-column="23" selection-end-line="392" selection-end-column="23" />
             </state>
           </provider>
@@ -74,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/templates/trade/energy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="624" column="37" lean-forward="true" selection-start-line="624" selection-start-column="37" selection-end-line="624" selection-end-column="45" />
+            <state relative-caret-position="-3192">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -83,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/templates/trade/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5133">
-              <caret line="252" column="44" lean-forward="true" selection-start-line="252" selection-start-column="44" selection-end-line="252" selection-end-column="44" />
+            <state relative-caret-position="323">
+              <caret line="347" column="41" lean-forward="true" selection-start-line="347" selection-start-column="41" selection-end-line="347" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="e#77#84#1" expanded="true" />
@@ -93,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/templates/trade/product_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="558" column="51" selection-start-line="558" selection-start-column="51" selection-end-line="558" selection-end-column="51" />
+            <state relative-caret-position="137">
+              <caret line="500" column="92" selection-start-line="500" selection-start-column="92" selection-end-line="500" selection-end-column="92" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -107,45 +109,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="65" column="18" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/static/trade/pages/morris.init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+            <state relative-caret-position="273">
+              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trade/urls.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trade/templates/trade/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trade/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2185">
+              <caret line="115" column="15" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -153,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="190">
+              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
               </folding>
@@ -163,10 +139,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Green_Light/settings.py">
+        <entry file="file://$PROJECT_DIR$/trade/templates/trade/introduction.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+            <state relative-caret-position="95">
+              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trade/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -188,6 +173,8 @@
       <find>&lt;body class=&quot;fixed-left&quot;&gt;</find>
       <find>header</find>
       <find>col</find>
+      <find>index</find>
+      <find>2014-06-17T</find>
       <find>&quot;assets</find>
     </findStrings>
     <replaceStrings>
@@ -207,11 +194,15 @@
         <option value="$USER_HOME$/Desktop/py back-up/Green-Light/trade/static/trade/css/style.css" />
         <option value="$PROJECT_DIR$/trade/static/trade/css/style.css" />
         <option value="$USER_HOME$/Desktop/Upcube_v1.1/Admin/Vertical/index.html" />
-        <option value="$PROJECT_DIR$/trade/templates/trade/energy.html" />
         <option value="$PROJECT_DIR$/trade/templates/trade/index.html" />
-        <option value="$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js" />
-        <option value="$PROJECT_DIR$/trade/templates/trade/product_detail.html" />
         <option value="$PROJECT_DIR$/trade/templates/trade/market.html" />
+        <option value="$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js" />
+        <option value="$PROJECT_DIR$/trade/static/trade/pages/morris.init.js" />
+        <option value="$PROJECT_DIR$/trade/templates/trade/energy.html" />
+        <option value="$PROJECT_DIR$/trade/urls.py" />
+        <option value="$PROJECT_DIR$/trade/views.py" />
+        <option value="$PROJECT_DIR$/trade/templates/trade/login.html" />
+        <option value="$PROJECT_DIR$/trade/templates/trade/product_detail.html" />
       </list>
     </option>
   </component>
@@ -222,8 +213,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="815" />
-    <option name="y" value="52" />
+    <option name="x" value="692" />
     <option name="width" value="1015" />
     <option name="height" value="995" />
   </component>
@@ -303,7 +293,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22684564" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -316,7 +306,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -341,9 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trade/settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Upcube_v1.1/Admin/Vertical/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -362,16 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21983">
           <caret line="1355" lean-forward="true" selection-start-line="1355" selection-end-line="1355" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trade/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -412,16 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trade/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trade/static/trade/plugins/raphael/raphael-min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -429,27 +396,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trade/static/trade/pages/morris.init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="116" column="35" lean-forward="true" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trade/static/trade/pages/sweet-alert.init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="65" column="18" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state relative-caret-position="1615">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trade/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5133">
-          <caret line="252" column="44" lean-forward="true" selection-start-line="252" selection-start-column="44" selection-end-line="252" selection-end-column="44" />
+        <state relative-caret-position="323">
+          <caret line="347" column="41" lean-forward="true" selection-start-line="347" selection-start-column="41" selection-end-line="347" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
             <element signature="e#77#84#1" expanded="true" />
@@ -459,26 +432,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/market.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="6593">
           <caret line="392" column="23" lean-forward="true" selection-start-line="392" selection-start-column="23" selection-end-line="392" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/energy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="624" column="37" lean-forward="true" selection-start-line="624" selection-start-column="37" selection-end-line="624" selection-end-column="45" />
+        <state relative-caret-position="-3192">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/templates/trade/introduction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/static/trade/pages/morris.init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/product_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="558" column="51" selection-start-line="558" selection-start-column="51" selection-end-line="558" selection-end-column="51" />
+        <state relative-caret-position="137">
+          <caret line="500" column="92" selection-start-line="500" selection-start-column="92" selection-end-line="500" selection-end-column="92" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade/templates/trade/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2185">
+          <caret line="115" column="15" lean-forward="true" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="15" />
         </state>
       </provider>
     </entry>

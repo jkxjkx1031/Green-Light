@@ -75,14 +75,18 @@
                 buttonsStyling: false
             }).then(function () {
                 swal(
-                    '订单已提交'
+                    'Success',
+                    '订单已提交',
+                    'success'
                 )
             }, function (dismiss) {
                 // dismiss can be 'cancel', 'overlay',
                 // 'close', and 'timer'
                 if (dismiss === 'cancel') {
                     swal(
-                        '订单已取消'
+                         'Cancelled',
+                         '订单已取消)',
+                         'error'
                     )
                 }
             })
