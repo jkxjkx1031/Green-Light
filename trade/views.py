@@ -44,8 +44,8 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             username = request.POST.get('username')
-            passwd = request.POST.get('passwd')
-            user = auth.authenticate(username=username, password=passwd)
+            password = request.POST.get('password')
+            user = auth.authenticate(username=username, password=password)
             if user is not None and user.is_active:
                 auth.login(request, user)
                 return HttpResponseRedirect(reverse('index'))
