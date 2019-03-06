@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.utils import timezone
 
-from .forms import LoginForm
 from .models import Product, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
@@ -38,21 +37,16 @@ def index(request):
 
 def login(request):
     if request.method == 'GET':
-        form = LoginForm()
-        return render(request, 'trade/login.html', {'form': form})
+        return render(request, 'trade/login.html')
     else:
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = auth.authenticate(username=username, password=password)
-            if user is not None and user.is_active:
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('index'))
-            else:
-                return render(request, 'trade/login.html', {'form': form, 'password_is_wrong': True})
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=username, password=password)
+        if user is not None and user.is_active:
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse('index'))
         else:
-            return render(request, 'trade/login.html', {'form': form})
+            return render(request, 'trade/login.html')
 
 
 def logout(request):
