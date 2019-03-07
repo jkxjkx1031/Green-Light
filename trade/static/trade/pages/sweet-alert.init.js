@@ -74,12 +74,28 @@
                 cancelButtonClass: 'btn btn-danger m-l-10',
                 buttonsStyling: false
             }).then(function () {
-                swal(
+            var x=document.getElementById("range_02")
+            var y=document.getElementById("range_01")
+
+            var amount = x.value
+            var price = y.value
+
+            $.ajax({
+                url: "/account/",
+                type: "POST",
+                dataType:"text",
+                data: {
+                    "amount" : amount,
+                    "price" : price
+                },
+                success: function(data){
+                }
+            });
+            swal(
                     'Success',
                     '订单已提交',
                     'success'
                 )
-                document.getElementById("jsReturnValue").innerHTML = true
             }, function (dismiss) {
                 // dismiss can be 'cancel', 'overlay',
                 // 'close', and 'timer'
@@ -89,7 +105,6 @@
                          '订单已取消)',
                          'error'
                     )
-                    document.getElementById("jsReturnValue").innerHTML = false
                 }
             })
         });

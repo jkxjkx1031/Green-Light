@@ -506,10 +506,9 @@
                                          <div class="col-xl-12">
                                               <div class="card m-b-30">
                                                  <div class="card-body">
-                                                    <form class="form-horizontal m-t-20" action="{% url 'energy' %}" method="POST">
-                                                        {% csrf_token %}
                                                     <div class="p-3">
                                                         <h5 class="font-16 m-b-20 mt-0">选择购买数量</h5>
+                                                        <p id="demo">hello</p>
                                                         <input type="text" id="range_02" name="amount">
                                                     </div>
                                                     <div class="p-3">
@@ -517,9 +516,8 @@
                                                         <input type="text" id="range_01" name="price">
                                                     </div>
                                                     <div class="col-xs-6 col-sm-3 m-b-30">
-                                                        <button type="button" class="btn btn-primary waves-effect waves-light" id="sa-params">确认购买</button>
+                                                        <button type="button" class="btn btn-primary waves-effect waves-light" id="sa-params" value = >确认购买</button>
                                                     </div>
-                                                    </form>
                                                  </div>
                                               </div>
                                         </div>

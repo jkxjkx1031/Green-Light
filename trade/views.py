@@ -120,18 +120,22 @@ def wechat_upload_view(request):
     else:
         return HttpResponse('<h1>GET</h1>')
 
-
+@csrf_exempt
 def account_modify(request):
+    print(111)
     if request.method == "GET":
         return render(request, 'trade/login.html')
     else:
-        if request.user.is_authenticated():
-            current_user = request.user
-            amount = request.POST.get('amount')
-            price = request.POST.get('price')
-            cost = current_user.account.asset - amount * price
+        current_user = request.user
+        amount = request.POST.get('amount')
+        int_amount = int(amount)
+        price = request.POST.get('price')
+        int_price = int(price)
+        print(current_user.account.asset)
+        cost = int_amount * int_price
         if current_user.account.asset > cost:
-            current_user.account.asset =current_user.account.asset - cost
-            return
+            current_user.account.asset = current_user.account.asset - cost
+            print(current_user.account.asset)
+            return HttpResponseRedirect("/")
         else:
             return render(request, 'trade/product_detail.html')
