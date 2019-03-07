@@ -119,3 +119,19 @@ def wechat_upload_view(request):
             return JsonResponse({'success': False})
     else:
         return HttpResponse('<h1>GET</h1>')
+
+
+def account_modify(request):
+    if request.method == "GET":
+        return render(request, 'trade/login.html')
+    else:
+        if request.user.is_authenticated():
+            current_user = request.user
+            amount = request.POST.get('amount')
+            price = request.POST.get('price')
+            cost = current_user.account.asset - amount * price
+        if current_user.account.asset > cost:
+            current_user.account.asset =current_user.account.asset - cost
+            return
+        else:
+            return render(request, 'trade/product_detail.html')

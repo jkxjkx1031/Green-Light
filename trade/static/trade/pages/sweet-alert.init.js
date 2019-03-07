@@ -79,6 +79,7 @@
                     '订单已提交',
                     'success'
                 )
+                document.getElementById("jsReturnValue").innerHTML = true
             }, function (dismiss) {
                 // dismiss can be 'cancel', 'overlay',
                 // 'close', and 'timer'
@@ -88,6 +89,7 @@
                          '订单已取消)',
                          'error'
                     )
+                    document.getElementById("jsReturnValue").innerHTML = false
                 }
             })
         });
