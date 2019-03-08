@@ -86,6 +86,8 @@
 
     <link href="{% static 'trade/plugins/sweet-alert2/sweetalert2.min.css' %}" rel="stylesheet" type="text/css">
 
+    <link href="{% static 'trade/assets/plugins/chartist/css/chartist.min.css' %}" rel="stylesheet" type="text/css">
+
     <!--<style type="text/css">-->
     <!--.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}-->
     <!--</style>-->
@@ -387,25 +389,25 @@
                                                     <div class="table-responsive">
                                                         <table class="table table-hover mb-0">
                                                          <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="https://www.apple.com/cn/apple-events/october-2018/" title="Apple 特别活动 2018 年 10 月 30 日" target="_blank">Apple 特别活动 2018 年 10 月 30 日</a>
+                                                                </td>
+                                                            </tr>
                                                              <tr>
-                                                                    <td>
-                                                                        <a href="http://static.sse.com.cn/disclosure/listedinfo/announcement/c/2019-02-28/600000_20190228_3.pdf" title="浦发银行优先股六期股息发放实施公告" target="_blank">600000:浦发银行优先股二期股息发放实施公告</a>
-                                                                    </td>
+                                                                 <td>
+                                                                     <a href="https://www.apple.com/cn/apple-events/september-2018/" title="Apple 特别活动 2018 年 9 月 12 日" target="_blank">Apple 特别活动 2018 年 9 月 12 日</a>
+                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>600000:浦发银行优先股五期股息发放实施公告</td>
+                                                                <td>
+                                                                    <a href="https://www.apple.com/cn/apple-events/june-2018/" title="Apple 特别活动 2018 年 6 月 4 日" target="_blank">Apple 特别活动 2018 年 6 月 4 日</a>
+                                                                </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>600000:浦发银行优先股四期股息发放实施公告</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>600000:浦发银行优先股三期股息发放实施公告</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>600000:浦发银行优先股二期股息发放实施公告</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>600000:浦发银行优先股一期股息发放实施公告</td>
+                                                                <td>
+                                                                 <a href="https://www.apple.com/cn/apple-events/" title="Apple 特别活动合集" target="_blank">Apple 特别活动合集</a>
+                                                                </td>
                                                             </tr>
 
                                                             </tbody>
@@ -426,39 +428,35 @@
                                                           <tbody>
                                                             <tr>
                                                                 <th>公司代码</th>
-                                                                <td>1000</td>
+                                                                <td>{{ company.code }}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>上市日</th>
-                                                                <td>1900-2-1</td>
+                                                                <td> {{ company.listing_date}}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>公司简称</th>
-                                                                <td>Apple</td>
+                                                                <td>{{ company.abbrev}}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>注册地址</th>
-                                                                <td>美国1号大街</td>
+                                                                <td>{{ company.address4register}}</td>
                                                            </tr>
                                                             <tr>
                                                                 <th>通讯地址</th>
-                                                                <td>美国1号大街</td>
+                                                                <td>{{ company.address4contact}}</td>
                                                             </tr>
                                                             <tr>
                                                                 <th>法定代表人</th>
-                                                                <td>moo</td>
+                                                                <td>{{ company.legal_person}}</td>
                                                            </tr>
                                                             <tr>
-                                                                <th>E-mail</th>
-                                                                <td>hhhh@gmail.com</td>
-                                                            </tr>
-                                                            <tr>
                                                                 <th>联系电话</th>
-                                                                <td>1222</td>
+                                                                <td>{{ company.tel}}</td>
                                                            </tr>
                                                             <tr>
                                                                 <th>网址</th>
-                                                                <td>ssss.com</td>
+                                                                <td>{{ company.website}}</td>
                                                             </tr>
 
                                                             </tbody>
@@ -476,12 +474,15 @@
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="mini-stat clearfix bg-white">
-                                                <span class="mini-stat-icon bg-light">公司logo<i class="mdi mdi-cart-outline text-danger"></i></span>
-                                                <div class="mini-stat-info text-right text-muted">
-                                                    <span class="counter text-danger">平均售价:   52cc</span>
-                                                    成交量:   40310
+                                                <span class="mini-stat-icon bg-light"><img class="d-flex mr-3 rounded-circle img-thumbnail" src="{% static 'trade/image/apple.jpg' %}" width=100px></span>
+                                                <div class="mini-stat-info text-left text-muted">
                                                 </div>
-                                              <p class="mb-0 m-t-20 text-muted">总额: 52 * 40310 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                                                <div class="mini-stat-info text-right text-muted">
+                                                    <span class="counter text-dark">{{company.abbrev}}</span>
+                                                    <span class="counter text-danger">平均售价:   38cc</span>
+                                                    累计成交量:   403103
+                                                </div>
+                                              <p class="mb-0 m-t-15 text-muted">已获得能量: 52670 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>2.25%</span></p>
                                             </div>
                                         </div>
                                     </div>
@@ -494,20 +495,20 @@
                                             <h4 class="mt-0 header-title">本日行情</h4>
                                             <ul class="list-inline widget-chart m-t-20 m-b-15 text-center">
                                                 <li class="list-inline-item">
-                                                    <h4 class=""><b>3654</b></h4>
-                                                    <p class="text-muted">Marketplace</p>
+                                                    <h4 class=""><b>44</b></h4>
+                                                    <p class="text-muted">市场均价</p>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <h4 class=""><b>954</b></h4>
-                                                    <p class="text-muted">Last week</p>
+                                                    <h4 class=""><b>29</b></h4>
+                                                    <p class="text-muted">{{ company.abbrev }}</p>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <h4 class=""><b>8462</b></h4>
-                                                    <p class="text-muted">Last Month</p>
+                                                    <p class="text-muted">今日成交量</p>
                                                 </li>
                                             </ul>
 
-                                                <div id="morris-line-example" style="height: 300px"></div>
+                                                 <div id="morris-line-example" style="height: 300px"></div>
 
 
                                                     </div>
@@ -584,6 +585,10 @@
 
         <script src="{% static 'trade/plugins/sweet-alert2/sweetalert2.min.js' %}"></script>
         <script src="{% static 'trade/pages/sweet-alert.init.js' %}"></script>
+
+        <script src="{% static 'trade/plugins/chartist/js/chartist.min.js' %}"></script>
+        <script src="{% static 'trade/plugins/chartist/js/chartist-plugin-tooltip.min.js' %}"></script>
+        <script src="{% static 'trade/pages/chartist.init.js' %}"></script>
 
         <!-- App js -->
         <script src="{% static 'trade/js/app.js' %}"></script>
