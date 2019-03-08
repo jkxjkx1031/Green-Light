@@ -46,7 +46,7 @@ def login(request):
             auth.login(request, user)
             return HttpResponseRedirect(reverse('index'))
         else:
-            return render(request, 'trade/login.html')
+            return render(request, 'trade/login.html', {'failure': True})
 
 
 def logout(request):

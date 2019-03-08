@@ -20,6 +20,10 @@
     <link href="{% static 'trade/css/icons.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'trade/css/style.css' %}" rel="stylesheet" type="text/css">
 
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     </head>
 
 
@@ -54,6 +58,12 @@
                                 </div>
                             </div>
 
+                            {% if failure %}
+                                <p class="text-left text-danger">Wrong username or password!</p>
+                            {% else %}
+                                <p></p>
+                            {% endif %}
+
                             <div class="form-group row">
                                 <div class="col-12">
                                     <div class="custom-control custom-checkbox">
@@ -71,10 +81,10 @@
 
                             <div class="form-group m-t-10 mb-0 row">
                                 <div class="col-sm-7 m-t-20">
-                                    <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock    "></i> Forgot your password?</a>
+                                    <a href="pages-recoverpw.html" class="text-muted"><i class="fas fa-lock"></i> Forgot your password?</a>
                                 </div>
                                 <div class="col-sm-5 m-t-20">
-                                    <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
+                                    <a href="pages-register.html" class="text-muted"><i class="fas fa-user-circle"></i> Create an account</a>
                                 </div>
                             </div>
                         </form>
@@ -101,19 +111,5 @@
         <!-- App js -->
          <script src="{% static 'trade/js/app.js' %}"></script>
 
-    </body>
-</html>
-
-<html lang="en">
-    <body>
-        {% if password_is_wrong %}
-            <h4>Wrong password!</h4>
-        {% endif %}
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="login">
-        </form>
-        <a href="">Create a new account now!</a>
     </body>
 </html>
