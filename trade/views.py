@@ -79,6 +79,7 @@ def energy_display(request):
     return render(request, 'trade/energy.html', context)
 
 
+@csrf_exempt
 def account_modify(request):
     if request.method == "GET":
         return render(request, 'trade/login.html')
