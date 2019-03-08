@@ -12,7 +12,7 @@ class Account(models.Model):
     img = models.ImageField(upload_to='trade/')
 
 
-class Product(models.Model):
+class Company(models.Model):
     name = models.CharField(max_length=100, default="")
     price = models.IntegerField(default=0)
     code = models.IntegerField(default=0)
