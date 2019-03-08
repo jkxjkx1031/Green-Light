@@ -292,7 +292,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{% url 'energy' %}" class="nav-link">
+                                <a href="{% url 'profile' %}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>我的账户</p>
                                 </a>
@@ -342,18 +342,18 @@
                         <div class="container-fluid">
 
                             <div class="row">
-                                {% for product in products %}
+                                {% for company in companies %}
                                     <div class="col-lg-3">
                                         <div class="card m-b-30">
                                             <div class="card-body">
 
                                                 <div class="media">
-                                                    <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{{ product.img.url }}" width=60px>
+                                                    <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{{ company.img.url }}" width=60px>
                                                     <div class="media-body">
                                                         <h5 class="mt-0 font-18 mb-1">
-                                                            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                                                            <a href="{% url 'company' company.id %}">{{ company.name }}</a>
                                                         </h5>
-                                                        <p class="text-muted font-14">Price: {{ product.price }} CC</p>
+                                                        <p class="text-muted font-14">Price: {{ company.price }} CC</p>
                                                     </div>
                                                 </div>
 

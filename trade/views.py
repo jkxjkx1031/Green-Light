@@ -55,32 +55,32 @@ def logout(request):
 
 
 def market(request):
-    products = get_list_or_404(Company)
+    companies = get_list_or_404(Company)
     context = {
-        'products': products
+        'companies': companies
     }
     return render(request, 'trade/market.html', context)
 
 
-def product_detail(request, product_id):
-    product = get_object_or_404(Company, pk=product_id)
+def company_profile(request, company_id):
+    company = get_object_or_404(Company, pk=company_id)
     context = {
-        'product': product
+        'company': company
     }
-    return render(request, 'trade/product_detail.html', context)
+    return render(request, 'trade/company.html', context)
 
 
 @login_required(login_url='/login/')
-def energy_display(request):
+def profile(request):
     context = {
         'account': request.user.account,
         'energy_account': request.user.account.energyaccount
     }
-    return render(request, 'trade/energy.html', context)
+    return render(request, 'trade/profile.html', context)
 
 
 @csrf_exempt
-def account_modify(request):
+def purchase(request):
     if request.method == "GET":
         return render(request, 'trade/login.html')
     else:
@@ -95,7 +95,7 @@ def account_modify(request):
             current_user.account.save()
             return HttpResponseRedirect("/")
         else:
-            return render(request, 'trade/product_detail.html')
+            return render(request, 'trade/company.html')
 
 
 @csrf_exempt

@@ -6,9 +6,9 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('market/', views.market, name='market'),
-    path('market/<int:product_id>/', views.product_detail, name='product_detail'),
-    path('energy/', views.energy_display, name='energy'),
-    path('account/', views.account_modify, name='account'),
+    path('market/<int:company_id>/', views.company_profile, name='company'),
+    path('profile/', views.profile, name='profile'),
+    path('pruchase/', views.purchase, name='purchase'),
     path('wxcrypt/', views.wechat_crypt_view, name='wxcrypt'),
     path('wxupload/', views.wechat_upload_view, name='wxupload'),
 ]
