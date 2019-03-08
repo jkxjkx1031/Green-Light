@@ -79,6 +79,24 @@ def energy_display(request):
     return render(request, 'trade/energy.html', context)
 
 
+def account_modify(request):
+    if request.method == "GET":
+        return render(request, 'trade/login.html')
+    else:
+        current_user = request.user
+        amount = request.POST.get('amount')
+        int_amount = int(amount)
+        price = request.POST.get('price')
+        int_price = int(price)
+        cost = int_amount * int_price
+        if current_user.account.asset > cost:
+            current_user.account.asset = current_user.account.asset - cost
+            current_user.account.save()
+            return HttpResponseRedirect("/")
+        else:
+            return render(request, 'trade/product_detail.html')
+
+
 @csrf_exempt
 def wechat_crypt_view(request):
     if request.method == 'POST':
@@ -119,23 +137,3 @@ def wechat_upload_view(request):
             return JsonResponse({'success': False})
     else:
         return HttpResponse('<h1>GET</h1>')
-
-@csrf_exempt
-def account_modify(request):
-    print(111)
-    if request.method == "GET":
-        return render(request, 'trade/login.html')
-    else:
-        current_user = request.user
-        amount = request.POST.get('amount')
-        int_amount = int(amount)
-        price = request.POST.get('price')
-        int_price = int(price)
-        print(current_user.account.asset)
-        cost = int_amount * int_price
-        if current_user.account.asset > cost:
-            current_user.account.asset = current_user.account.asset - cost
-            print(current_user.account.asset)
-            return HttpResponseRedirect("/")
-        else:
-            return render(request, 'trade/product_detail.html')
