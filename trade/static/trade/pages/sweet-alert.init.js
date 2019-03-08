@@ -81,7 +81,7 @@
             var price = y.value
 
             $.ajax({
-                url: "/account/",
+                url: "/purchase/",
                 type: "POST",
                 dataType:"text",
                 data: {
@@ -102,7 +102,7 @@
                 if (dismiss === 'cancel') {
                     swal(
                          'Cancelled',
-                         '订单已取消)',
+                         '订单已取消',
                          'error'
                     )
                 }
