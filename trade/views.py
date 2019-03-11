@@ -129,7 +129,7 @@ def wechat_upload_view(request):
             ea.last_uploaded = timezone.now()
             ea.save()
             auth.logout(request)
-            return JsonResponse({'success': True, 'uploadTime': ea.last_uploaded})
+            return JsonResponse({'success': True, 'uploadTime': ea.last_uploaded.strftime('%H:%M:%S')})
         else:
             return JsonResponse({'success': False})
     else:

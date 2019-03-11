@@ -126,6 +126,14 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'trade/media/')
 
 
+# Timezone settings
+
+import time
+ 
+os.environ['TZ'] = 'Asia/Shanghai'
+# time.tzset()
+
+
 # CRONTAB
 
 import platform
