@@ -24,6 +24,7 @@ class Company(models.Model):
     tel = models.CharField(max_length=100, default="")
     website = models.CharField(max_length=100, default="")
     is_validated = models.BooleanField(default=False)
+    identifier = models.CharField(max_length=20, default="")
     img = models.ImageField(upload_to='trade/')
 
 

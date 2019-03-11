@@ -112,16 +112,16 @@
     MorrisCharts.prototype.init = function() {
 
         //create line chart
-        var $data  = [
-            { y: '2019-03-03', a: 40,  b: 41 },
-            { y: '2019-03-04', a: 45,  b: 46 },
-            { y: '2019-03-05', a: 30,  b: 27 },
-            { y: '2019-03-06', a: 35,  b: 30 },
-            { y: '2019-03-07', a: 32,  b: 32 },
-            { y: '2019-03-08', a: 52,  b: 44 },
-            { y: '2019-03-09', a: 44,  b: 29 }
-          ];
-        this.createLineChart('morris-line-example', $data, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+        // var $data  = [
+        //     { y: '2019-03-03', a: 40,  b: 41 },
+        //     { y: '2019-03-04', a: 45,  b: 46 },
+        //     { y: '2019-03-05', a: 30,  b: 27 },
+        //     { y: '2019-03-06', a: 35,  b: 30 },
+        //     { y: '2019-03-07', a: 32,  b: 32 },
+        //     { y: '2019-03-08', a: 52,  b: 44 },
+        //     { y: '2019-03-09', a: 44,  b: 29 }
+        //   ];
+        // this.createLineChart('morris-line-example', $data, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
 
         //apple
         var $data_apple  = [
@@ -133,9 +133,10 @@
             { y: '2019-03-08', a: 52,  b: 44 },
             { y: '2019-03-09', a: 44,  b: 29 }
           ];
-        this.createLineChart('morris-line-apple', $data_apple, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+        if (document.getElementById('morris-line-apple') != null)
+            this.createLineChart('morris-line-apple', $data_apple, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
 
-        //apple
+        //alibaba
         var $data_alibaba  = [
             { y: '2019-03-03', a: 40,  b: 48 },
             { y: '2019-03-04', a: 45,  b: 50 },
@@ -145,9 +146,10 @@
             { y: '2019-03-08', a: 52,  b: 50 },
             { y: '2019-03-09', a: 44,  b: 43 }
           ];
-        this.createLineChart('morris-line-Alibaba', $data_alibaba, 'y', ['a', 'b'], ['Average', 'Alibaba'], ['#0f9cf3', '#0097a7']);
+        if (document.getElementById('morris-line-alibaba') != null)
+            this.createLineChart('morris-line-alibaba', $data_alibaba, 'y', ['a', 'b'], ['Average', 'Alibaba'], ['#0f9cf3', '#0097a7']);
 
-        //alibaba
+        //morgan
         var $data_morgan  = [
             { y: '2019-03-03', a: 40,  b: 41 },
             { y: '2019-03-04', a: 45,  b: 46 },
@@ -157,7 +159,8 @@
             { y: '2019-03-08', a: 52,  b: 44 },
             { y: '2019-03-09', a: 44,  b: 29 }
           ];
-        this.createLineChart('morris-line-apple', $data_morgan, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+        if (document.getElementById('morris-line-morgan') != null)
+            this.createLineChart('morris-line-morgan', $data_morgan, 'y', ['a', 'b'], ['Average', 'Morgan'], ['#0f9cf3', '#0097a7']);
 
         //dazhong
         var $data_dazhong  = [
@@ -169,9 +172,10 @@
             { y: '2019-03-08', a: 52,  b: 39 },
             { y: '2019-03-09', a: 44,  b: 33 }
           ];
-        this.createLineChart('morris-line-dazhong', $data_dazhong, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+        if (document.getElementById('morris-line-dazhong') != null)
+            this.createLineChart('morris-line-dazhong', $data_dazhong, 'y', ['a', 'b'], ['Average', 'DaZhong'], ['#0f9cf3', '#0097a7']);
 
-        //apple
+        //spc
         var $data_spc  = [
             { y: '2019-03-03', a: 40,  b: 41 },
             { y: '2019-03-04', a: 45,  b: 46 },
@@ -181,7 +185,8 @@
             { y: '2019-03-08', a: 52,  b: 44 },
             { y: '2019-03-09', a: 44,  b: 29 }
           ];
-        this.createLineChart('morris-line-spc', $data_spc, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+        if (document.getElementById('morris-line-spc') != null)
+            this.createLineChart('morris-line-spc', $data_spc, 'y', ['a', 'b'], ['Average', 'SPC'], ['#0f9cf3', '#0097a7']);
 
         //creating area chart
         var $areaData = [
