@@ -123,6 +123,66 @@
           ];
         this.createLineChart('morris-line-example', $data, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
 
+        //apple
+        var $data_apple  = [
+            { y: '2019-03-03', a: 40,  b: 41 },
+            { y: '2019-03-04', a: 45,  b: 46 },
+            { y: '2019-03-05', a: 30,  b: 27 },
+            { y: '2019-03-06', a: 35,  b: 30 },
+            { y: '2019-03-07', a: 32,  b: 32 },
+            { y: '2019-03-08', a: 52,  b: 44 },
+            { y: '2019-03-09', a: 44,  b: 29 }
+          ];
+        this.createLineChart('morris-line-apple', $data_apple, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+
+        //apple
+        var $data_alibaba  = [
+            { y: '2019-03-03', a: 40,  b: 48 },
+            { y: '2019-03-04', a: 45,  b: 50 },
+            { y: '2019-03-05', a: 30,  b: 43 },
+            { y: '2019-03-06', a: 35,  b: 44 },
+            { y: '2019-03-07', a: 32,  b: 42 },
+            { y: '2019-03-08', a: 52,  b: 50 },
+            { y: '2019-03-09', a: 44,  b: 43 }
+          ];
+        this.createLineChart('morris-line-Alibaba', $data_alibaba, 'y', ['a', 'b'], ['Average', 'Alibaba'], ['#0f9cf3', '#0097a7']);
+
+        //alibaba
+        var $data_morgan  = [
+            { y: '2019-03-03', a: 40,  b: 41 },
+            { y: '2019-03-04', a: 45,  b: 46 },
+            { y: '2019-03-05', a: 30,  b: 27 },
+            { y: '2019-03-06', a: 35,  b: 30 },
+            { y: '2019-03-07', a: 32,  b: 32 },
+            { y: '2019-03-08', a: 52,  b: 44 },
+            { y: '2019-03-09', a: 44,  b: 29 }
+          ];
+        this.createLineChart('morris-line-apple', $data_morgan, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+
+        //dazhong
+        var $data_dazhong  = [
+            { y: '2019-03-03', a: 40,  b: 30 },
+            { y: '2019-03-04', a: 45,  b: 35 },
+            { y: '2019-03-05', a: 30,  b: 27 },
+            { y: '2019-03-06', a: 35,  b: 30 },
+            { y: '2019-03-07', a: 32,  b: 32 },
+            { y: '2019-03-08', a: 52,  b: 39 },
+            { y: '2019-03-09', a: 44,  b: 33 }
+          ];
+        this.createLineChart('morris-line-dazhong', $data_dazhong, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+
+        //apple
+        var $data_spc  = [
+            { y: '2019-03-03', a: 40,  b: 41 },
+            { y: '2019-03-04', a: 45,  b: 46 },
+            { y: '2019-03-05', a: 30,  b: 27 },
+            { y: '2019-03-06', a: 35,  b: 30 },
+            { y: '2019-03-07', a: 32,  b: 32 },
+            { y: '2019-03-08', a: 52,  b: 44 },
+            { y: '2019-03-09', a: 44,  b: 29 }
+          ];
+        this.createLineChart('morris-line-spc', $data_spc, 'y', ['a', 'b'], ['Average', 'Apple'], ['#0f9cf3', '#0097a7']);
+
         //creating area chart
         var $areaData = [
             {y: '2009', a: 10, b: 20},
