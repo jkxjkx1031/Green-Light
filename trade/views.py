@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.utils import timezone
 
-from .models import Company, CarbonCoinCcy
+from .models import Company, Product, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
 import json, operator
@@ -64,6 +64,22 @@ def company_profile(request, company_id):
         'company': company
     }
     return render(request, 'trade/company.html', context)
+
+
+def store(request):
+    products = get_list_or_404(Product)
+    context = {
+        'products': products
+    }
+    return render(request, 'trade/store.html', context)
+
+
+def product_profile(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    context = {
+        'product': product
+    }
+    return render(request, 'trade/product.html', context)
 
 
 @login_required(login_url='/login/')

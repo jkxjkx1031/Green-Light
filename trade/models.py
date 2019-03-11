@@ -28,6 +28,13 @@ class Company(models.Model):
     img = models.ImageField(upload_to='trade/')
 
 
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+    stock = models.IntegerField(default=0)
+    img = models.ImageField(upload_to='trade/')
+
+
 class EnergyAccount(models.Model):
     account = models.OneToOneField(Account, models.CASCADE)
     energy = models.IntegerField(default=0)

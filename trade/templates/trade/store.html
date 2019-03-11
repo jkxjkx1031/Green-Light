@@ -341,7 +341,7 @@
                 <div class="container-fluid">
                  <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">交易中心</h1>
+                        <h1 class="m-0 text-dark">商店</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -362,18 +362,18 @@
                         <div class="container-fluid">
 
                             <div class="row">
-                                {% for company in companies %}
-                                    <div class="col-6">
-                                        <div class="card m-b-30 m-2">
-                                            <div class="card-body border border-muted" style="background-color: #D0D9D0;">
+                                {% for product in products %}
+                                    <div class="col-3">
+                                        <div class="card m-b-30">
+                                            <div class="card-body">
 
                                                 <div class="media">
-                                                    <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{{ company.img.url }}" width=80px>
+                                                    <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{{ product.img.url }}" width=60px>
                                                     <div class="media-body">
                                                         <h5 class="mt-0 font-18 mb-1">
-                                                            <a href="{% url 'company' company.id %}"><p class="text-dark">{{ company.name }}</p></a>
+                                                            <a href="{% url 'product' product.id %}">{{ product.name }}</a>
                                                         </h5>
-                                                        <p class="text-secondary font-14">平均售价：{{ company.price }} CC</p>
+                                                        <p class="text-muted font-14">{{ product.price }} CC</p>
                                                     </div>
                                                 </div>
 
