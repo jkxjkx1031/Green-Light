@@ -79,6 +79,7 @@
 
             var amount = x.value
             var price = y.value
+            var companyId = document.getElementById("sa-params").value
 
             $.ajax({
                 url: "/purchase/",
@@ -86,7 +87,8 @@
                 dataType:"text",
                 data: {
                     "amount" : amount,
-                    "price" : price
+                    "price" : price,
+                    "company": companyId
                 },
                 success: function(data){
                 }

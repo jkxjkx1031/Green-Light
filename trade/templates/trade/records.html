@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
     {% load static %}
+
+    <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'trade/plugins/bootstrap/css/bootstrap.min.css' %}">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{% static 'trade/plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{% static 'trade/css/ionicons.min.css' %}">
     <!-- jvectormap -->
@@ -70,12 +72,32 @@
     <link href="{% static 'trade/css/index4-append.css' %}" rel="stylesheet">
     <script src="{% static 'trade/js/bootstrap-wysiwyg.js' %}"></script>
 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="{% static 'trade/image/favicon.ico' %}">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="{% static 'trade/plugins/morris/morris.css' %}">
+
+    <link href="{% static 'trade/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'trade/css/icons.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'trade/css/style.css' %}" rel="stylesheet" type="text/css">
+
+    <!--<style type="text/css">-->
+    <!--.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}-->
+    <!--</style>-->
+
+
     </head>
 
-
-
 <body class="hold-transition sidebar-mini">
+
 <div class="wrapper">
+
 
         <!-- Navbar -->
     <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
@@ -335,66 +357,104 @@
         <!-- /.sidebar -->
     </aside>
 
+
+        <!-- Loader -->
+        <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+
             <!-- Start right Content here -->
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">交易中心</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div><!-- /.col -->
-                 </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-        <!-- /.content-header -->
+
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                    <div class="content-header">
+                        <div class="container-fluid">
+                         <div class="row mb-2">
+                            <div class="col-sm-6">
+                             <h1 class="m-0 text-dark">我的交易记录</h1>
+                           </div><!-- /.col -->
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                       <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                       <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div><!-- /.col -->
+                         </div><!-- /.row -->
+                        </div><!-- /.container-fluid -->
+                    </div>
+
 
                     <div class="page-content-wrapper ">
 
                         <div class="container-fluid">
 
+
                             <div class="row">
-                                {% for company in companies %}
-                                    <div class="col-6">
-                                        <div class="card m-b-30 m-2">
-                                            <div class="card-body border border-muted" style="background-color: #D0D9D0;">
 
-                                                <div class="media">
-                                                    <img class="d-flex mr-3 rounded-circle img-thumbnail thumb-lg" src="{{ company.img.url }}" width=80px>
-                                                    <div class="media-body">
-                                                        <h5 class="mt-0 font-18 mb-1">
-                                                            <a href="{% url 'company' company.id %}"><p class="text-dark">{{ company.name }}</p></a>
-                                                        </h5>
-                                                        <p class="text-secondary font-14">平均售价：{{ company.price }} CC</p>
-                                                    </div>
-                                                </div>
+                                <div class="col-xl-12">
+                                    <div class="card m-b-30">
+                                        <div class="card-body">
+                                            <h4 class="mt-0 m-b-15 header-title">My orders</h4>
 
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-0">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Time</th>
+                                                        <th>Company</th>
+                                                        <th>Product</th>
+                                                        <th>Amount</th>
+                                                        <th>Price</th>
+                                                        <th>Total cost</th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                    {% for record in records %}
+                                                        <tr>
+                                                            <td>{{ record.time }}</td>
+                                                            <td>
+                                                                {% if record.company == None %}
+                                                                    Green-Light
+                                                                {% else %}
+                                                                    {{ record.company.abbrev }}
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>
+                                                                {% if record.product == None %}
+                                                                    Carbon credit
+                                                                {% else %}
+                                                                    {{ record.product.name }}
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>{{ record.amount }}</td>
+                                                            <td>{{ record.price }}.00 CC</td>
+                                                            <td>{{ record.cost }}.00 CC</td>
+                                                        </tr>
+                                                    {% endfor %}
+    
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                    </div> <!-- end col -->
-                                {% endfor %}
-                            </div> <!-- end row -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- end row -->
+
 
                         </div><!-- container -->
+
 
                     </div> <!-- Page content Wrapper -->
 
                 </div> <!-- content -->
 
             </div>
-        </div>
             <!-- End Right content here -->
-        </div>
-    </body>
-        <!-- END wrapper -->
+
+</div>
+</body>
 
         <!-- jQuery  -->
         <script src="{% static 'trade/js/jquery.min.js' %}"></script>
@@ -409,8 +469,11 @@
         <script src="{% static 'trade/js/jquery.nicescroll.js' %}"></script>
         <script src="{% static 'trade/js/jquery.scrollTo.min.js' %}"></script>
 
+        <!--Morris Chart-->
+        <script src="{% static 'trade/plugins/morris/morris.min.js' %}"></script>
+        <script src="{% static 'trade/plugins/raphael/raphael-min.js' %}"></script>
+        <script src="{% static 'trade/pages/dashborad.js' %}"></script>
 
         <!-- App js -->
         <script src="{% static 'trade/js/app.js' %}"></script>
-    </body>
 </html>

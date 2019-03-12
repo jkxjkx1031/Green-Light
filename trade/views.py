@@ -6,15 +6,14 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.utils import timezone
 
-from .models import Company, Product, CarbonCoinCcy
+from .models import Company, Product, Purchase, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
-import json, operator
+import json
 
 
 def index(request):
     ccy_list = get_list_or_404(CarbonCoinCcy)
-    ccy_list = sorted(ccy_list, key=operator.attrgetter('date'), reverse=True)
     if len(ccy_list) > 15:
         ccy_list = ccy_list[:15]
     inc3 = round((ccy_list[0].close - ccy_list[3].close) / ccy_list[3].close * 100)
@@ -105,9 +104,19 @@ def purchase(request):
         if current_user.account.asset > cost:
             current_user.account.asset = current_user.account.asset - cost
             current_user.account.save()
+            company_id = request.POST.get('company')
+            record = Purchase(user=current_user, amount=amount, price=price, time=timezone.now(), company=get_object_or_404(Company, pk=company_id))
+            record.save()
             return HttpResponseRedirect("/")
         else:
             return render(request, 'trade/company.html')
+
+
+def records(request):
+    context = {
+        'records': Purchase.objects.filter(user=request.user)
+    }            
+    return render(request, 'trade/records.html', context)
 
 
 @csrf_exempt

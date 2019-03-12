@@ -49,7 +49,29 @@ class EnergyAccount(models.Model):
         return self.energy * 100 // self.next_level()
 
 
+class Purchase(models.Model):
+    user = models.ForeignKey(User, models.CASCADE)
+    amount = models.IntegerField()
+    price = models.IntegerField()
+    time = models.DateTimeField()
+    company = models.ForeignKey(Company, models.SET_NULL, null=True, default=None)
+    # Set to None when purchasing products of the store
+    product = models.ForeignKey(Product, models.SET_NULL, null=True, default=None)
+    # Set to None when purchasing Carbon credit
+    def cost(self):
+        return self.amount * self.price
+    def stime(self):
+        return self.time.strftime('%Y-%m-%d')
+    class Meta:
+        indexes = [
+            models.Index(fields=['user'])
+        ]
+        ordering = ['-time']
+
+
 class CarbonCoinCcy(models.Model):
     date = models.DateField(unique=True)
     close = models.FloatField()
+    class Meta:
+        ordering = ['-date']
     
