@@ -92,6 +92,7 @@
             modal.find('#product-name').text(name)
             modal.find('#product-price').text(price)
             modal.find('#total').text(price + '.00 CC')
+            modal.find('#amount').val(1)
             modal.find('#price').val(price)
             modal.find('#product').val(pid)
             modal.find('#product-img').attr('src', img)
@@ -125,7 +126,7 @@ aria-hidden="true">
                 <form action="{% url 'purchase' %}" method="post" id="purchase-form">
                     <div>
                         <label for="amount">Amount: </label>
-                        <input type="number" name="amount" id="amount" min="1" value="1" style="width: 100px" oninput="updateTotal()">
+                        <input type="number" name="amount" id="amount" min="1" style="width: 100px" oninput="updateTotal()">
                         <input type="hidden" name="price" id="price" value="">
                         <input type="hidden" name="product" id="product" value="">
                     </div>
