@@ -105,11 +105,15 @@ def purchase(request):
             current_user.account.asset = current_user.account.asset - cost
             current_user.account.save()
             company_id = request.POST.get('company')
-            record = Purchase(user=current_user, amount=amount, price=price, time=timezone.now(), company=get_object_or_404(Company, pk=company_id))
+            product_id = request.POST.get('product')
+            if product_id != None:
+                record = Purchase(user=current_user, amount=amount, price=price, time=timezone.now(), product=get_object_or_404(Product, pk=product_id))
+            else:
+                record = Purchase(user=current_user, amount=amount, price=price, time=timezone.now(), company=get_object_or_404(Company, pk=company_id))
             record.save()
-            return HttpResponseRedirect("/")
+            return HttpResponseRedirect(reverse('records'))
         else:
-            return render(request, 'trade/company.html')
+            return render(request, 'trade/index.html')
 
 
 def records(request):
