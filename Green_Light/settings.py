@@ -134,5 +134,5 @@ if platform.system() == 'Linux':
     INSTALLED_APPS.append('django_crontab')
 
 CRONJOBS = [
-    ('* * * * *', 'trade.tasks.energy_gather', '>> ' + os.path.join(BASE_DIR, 'trade/logs/crontab_log.txt'))
+    ('0 0 * * *', 'trade.tasks.energy_gather', '>> ' + os.path.join(BASE_DIR, 'trade/logs/crontab_log.txt'))
 ]
