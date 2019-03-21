@@ -49,6 +49,21 @@ class EnergyAccount(models.Model):
         return self.energy * 100 // self.next_level()
 
 
+class EnergyHistory(models.Model):
+    ea = models.ForeignKey(EnergyAccount, models.CASCADE)
+    energy = models.IntegerField()
+    reward = models.IntegerField()
+    date = models.DateField()
+    def energy_level(self):
+        return self.energy // ENERGY_LEVEL_INCREMENT
+    class Meta:
+        indexes = [
+            models.Index(fields=['ea'])
+        ]
+        ordering = ['-date']
+        unique_together = ('ea', 'date')
+
+
 class Purchase(models.Model):
     user = models.ForeignKey(User, models.CASCADE)
     amount = models.IntegerField()
@@ -74,4 +89,3 @@ class CarbonCoinCcy(models.Model):
     close = models.FloatField()
     class Meta:
         ordering = ['-date']
-    

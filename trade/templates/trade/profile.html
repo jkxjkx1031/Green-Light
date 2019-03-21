@@ -506,36 +506,20 @@
                                                     <tr>
                                                         <th>Date</th>
                                                         <th>Steps</th>
+                                                        <th>Reward</th>
                                                     </tr>
     
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>2019-03-19</td>
-                                                        <td>8343</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2019-03-18</td>
-                                                        <td>12155</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2019-03-17</td>
-                                                        <td>4355</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2019-03-16</td>
-                                                        <td>7987</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2019-03-15</td>
-                                                        <td>12309</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2019-03-14</td>
-                                                        <td>15611</td>
-                                                    </tr>
-    
+                                                    {% for record in energy_history %}
+                                                        <tr>
+                                                            <td>{{ record.date }}</td>
+                                                            <td>{{ record.energy }}</td>
+                                                            <td>{{ record.reward }}</td>
+                                                        </tr>
+                                                    {% endfor %}
                                                     </tbody>
+
                                                 </table>
                                             </div>
                                         </div>

@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.utils import timezone
 
-from .models import Company, Product, Purchase, CarbonCoinCcy
+from .models import Company, Product, Purchase, EnergyHistory, CarbonCoinCcy
 from .wechat_crypt.WXBizDataCrypt import WXBizDataCrypt
 
 import json
@@ -85,7 +85,8 @@ def product_profile(request, product_id):
 def profile(request):
     context = {
         'account': request.user.account,
-        'energy_account': request.user.account.energyaccount
+        'energy_account': request.user.account.energyaccount,
+        'energy_history': EnergyHistory.objects.filter(ea=request.user.account.energyaccount)[:7]
     }
     return render(request, 'trade/profile.html', context)
 
