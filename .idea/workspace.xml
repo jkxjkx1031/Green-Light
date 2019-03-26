@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="693d66a4-66c2-446b-8992-b5700cfd8f39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../trade/migrations/0020_auto_20190321_1343.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../trade/migrations/0021_energyhistory_energy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../trade/migrations/0022_auto_20190321_1618.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Green-Light.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Green-Light.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Green_Light/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Green_Light/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/templates/trade/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/templates/trade/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/templates/trade/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/templates/trade/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trade/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trade/views.py" afterDir="false" />
+    <list default="true" id="693d66a4-66c2-446b-8992-b5700cfd8f39" name="Default Changelist" comment="EnergyHistory created; Profile view updated; Cronjob edited (for updating EnergyHistory); Timezone set.">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/logs/crontab_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trade/logs/crontab_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade/templates/trade/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trade/templates/trade/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,67 +19,11 @@
     <favorites_list name="Green-Light" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../trade/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../trade/templates/trade/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#77#84#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../trade/templates/trade/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="516" column="88" lean-forward="true" selection-start-line="516" selection-start-column="88" selection-end-line="516" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../trade/views.py">
+        <entry file="file://$PROJECT_DIR$/trade/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="123" column="57" lean-forward="true" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Green_Light/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="116" column="14" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../trade/tasks.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state>
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -127,7 +61,12 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$USER_HOME$" value="jkx" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -149,21 +88,22 @@
         <option value="$PROJECT_DIR$/trade/templates/trade/company.html" />
         <option value="$PROJECT_DIR$/Green_Light/settings.py" />
         <option value="$USER_HOME$/trade/models.py" />
-        <option value="$PROJECT_DIR$/../trade/templates/trade/profile.html" />
-        <option value="$PROJECT_DIR$/../trade/views.py" />
-        <option value="$PROJECT_DIR$/../trade/admin.py" />
-        <option value="$PROJECT_DIR$/../trade/tasks.py" />
-        <option value="$PROJECT_DIR$/../trade/models.py" />
-        <option value="$PROJECT_DIR$/../Green_Light/settings.py" />
-        <option value="$PROJECT_DIR$/../trade/templates/trade/index.html" />
+        <option value="$USER_HOME$/trade/templates/trade/profile.html" />
+        <option value="$USER_HOME$/trade/views.py" />
+        <option value="$USER_HOME$/trade/admin.py" />
+        <option value="$USER_HOME$/trade/models.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$USER_HOME$/trade/templates/trade/index.html" />
+        <option value="$USER_HOME$/trade/tasks.py" />
+        <option value="$USER_HOME$/trade/templates/trade/login.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="642" />
-    <option name="y" value="26" />
-    <option name="width" value="1015" />
-    <option name="height" value="995" />
+    <option name="x" value="654" />
+    <option name="y" value="20" />
+    <option name="width" value="995" />
+    <option name="height" value="1009" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -172,40 +112,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-              <item name="trade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-              <item name="trade" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="Green_Light" type="462c0819:PsiDirectoryNode" />
-              <item name="trade" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="trade" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,17 +146,30 @@
       <updated>1550741818870</updated>
       <workItem from="1553144592528" duration="1854000" />
       <workItem from="1553146472547" duration="147000" />
-      <workItem from="1553146639706" duration="9887000" />
+      <workItem from="1553146639706" duration="10268000" />
+      <workItem from="1553159394679" duration="305000" />
+      <workItem from="1553484728485" duration="97000" />
+      <workItem from="1553609606104" duration="783000" />
+      <workItem from="1553610483816" duration="1371000" />
+      <workItem from="1553611874335" duration="13000" />
     </task>
+    <task id="LOCAL-00001" summary="EnergyHistory created; Profile view updated; Cronjob edited (for updating EnergyHistory); Timezone set.">
+      <created>1553158271443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553158271443</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11888000" />
+    <option name="totallyTimeSpent" value="14838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49622926" visible="true" weight="0.20922747" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49622926" visible="true" weight="0.22424893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50377077" side_tool="true" weight="0.44946808" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -262,8 +182,8 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32914287" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4994641" visible="true" weight="0.32685715" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5005359" side_tool="true" weight="0.32801822" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" visible="true" weight="0.3257143" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50107294" side_tool="true" weight="0.32685715" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32914287" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -323,6 +243,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -346,93 +280,35 @@
     <entry file="file://$PROJECT_DIR$/trade/migrations/0012_auto_20190307_1248.py" />
     <entry file="file://$PROJECT_DIR$/trade/migrations/0015_remove_product_code.py" />
     <entry file="file://$USER_HOME$/trade/static/trade/plugins/bootstrap/css/bootstrap.min.css" />
-    <entry file="file://$USER_HOME$/trade/admin.py" />
     <entry file="file://$USER_HOME$/manage.py" />
     <entry file="file://$USER_HOME$/trade/static/trade/pages/rangeslider-init.js" />
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/product_detail.html" />
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/introduction.html" />
     <entry file="file://$PROJECT_DIR$/trade/templates/trade/energy.html" />
-    <entry file="file://$USER_HOME$/trade/templates/trade/login.html" />
     <entry file="file://$USER_HOME$/trade/static/trade/pages/sweet-alert.init.js" />
     <entry file="file://$USER_HOME$/trade/urls.py" />
-    <entry file="file://$USER_HOME$/trade/views.py" />
     <entry file="file://$USER_HOME$/trade/tests.py" />
-    <entry file="file://$USER_HOME$/trade/templates/trade/index.html" />
-    <entry file="file://$USER_HOME$/trade/tasks.py" />
     <entry file="file://$USER_HOME$/trade/apps.py" />
-    <entry file="file://$PROJECT_DIR$/settings.py" />
     <entry file="file://$USER_HOME$/trade/settings.py" />
     <entry file="file://$USER_HOME$/trade/static/trade/pages/morris.init.js" />
     <entry file="file://$USER_HOME$/trade/templates/trade/company.html" />
-    <entry file="file://$USER_HOME$/trade/templates/trade/profile.html" />
     <entry file="file://$USER_HOME$/trade/templates/trade/market.html" />
+    <entry file="file://$USER_HOME$/trade/templates/trade/records.html" />
+    <entry file="file://$USER_HOME$/trade/admin.py" />
+    <entry file="file://$USER_HOME$/trade/templates/trade/index.html" />
+    <entry file="file://$USER_HOME$/trade/templates/trade/profile.html" />
+    <entry file="file://$PROJECT_DIR$/settings.py" />
+    <entry file="file://$USER_HOME$/trade/views.py" />
+    <entry file="file://$USER_HOME$/.wget-hsts" />
+    <entry file="file://$USER_HOME$/trade/tasks.py" />
     <entry file="file://$USER_HOME$/trade/models.py" />
-    <entry file="file://$PROJECT_DIR$/../trade/templates/trade/records.html">
+    <entry file="file://$USER_HOME$/trade/logs/crontab_log.txt" />
+    <entry file="file://$USER_HOME$/trade/templates/trade/login.html" />
+    <entry file="file://$PROJECT_DIR$/trade/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9151" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Green_Light/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="116" column="14" selection-start-line="116" selection-start-column="14" selection-end-line="116" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state>
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/templates/trade/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="516" column="88" lean-forward="true" selection-start-line="516" selection-start-column="88" selection-end-line="516" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/templates/trade/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#77#84#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../trade/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="123" column="57" lean-forward="true" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>

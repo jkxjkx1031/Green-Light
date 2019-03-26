@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.db import transaction
 from .models import EnergyAccount, EnergyHistory
 from .settings import TOTAL_CC_SCATTER_DAILY
+from datetime import timedelta
 
 @transaction.atomic()
 def energy_gather():
@@ -18,7 +19,7 @@ def energy_gather():
             reward = 0
         try:
             with transaction.atomic():
-                record = EnergyHistory(ea=ea, energy=ea.energy, reward=reward, date=timezone.now().date())
+                record = EnergyHistory(ea=ea, energy=ea.energy, reward=reward, date=timezone.now().date() - timedelta(days=1))
                 ea.account.asset += reward
                 ea.account.save()
                 ea.energy = 0
